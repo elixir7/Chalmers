@@ -6,7 +6,7 @@ import javax.swing.JOptionPane;
 public class Upg13 {
 	public static void main(String [] arg){
 		boolean bol = true;
-		//Loop för imput och test om input är giltigt
+		//Loop för input och test om input är giltigt
 		while(bol){
 			String indata = JOptionPane.showInputDialog("Årtal mallen år 1900-2099");
 			int year = Integer.parseInt(indata);
