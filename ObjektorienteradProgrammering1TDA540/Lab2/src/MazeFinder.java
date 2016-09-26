@@ -1,5 +1,6 @@
 public class MazeFinder { 
-	private Robot robot; 
+	private Robot robot;
+    private final int DEFAULT_DELAY = 20;
 	public static void main(String[] args) { 
 		MazeFinder finder = new MazeFinder(); 
 		finder.createEnviroment(); 
@@ -9,7 +10,7 @@ public class MazeFinder {
 	public void createEnviroment() { 
 		RobotWorld world = RobotWorld.load("src/maze.txt"); 
 		robot = new Robot(2, 0, Robot.EAST, world);
-		robot.setDelay(20);
+		robot.setDelay(DEFAULT_DELAY);
 	}//createEnviroment 
 
 	// The robot finds the way through a simply connected maze
@@ -17,47 +18,71 @@ public class MazeFinder {
 	//        The robot is at the entrance of the maze.
 	//after:  The robot is at the exit of the maze
 	public void findExit() {
-		while(true){
+	    boolean finished = false;
+		while(!finished){
 		    if(!robot.atEndOfWorld()){
-                if (robot.frontIsClear()) {
-                    //Turn left and check if it is clear
+                if(robot.frontIsClear()) {
+                    checkLeft();
+                }else{
                     robot.turnLeft();
+                    //Left Maze corner
                     if(robot.frontIsClear()){
                         robot.move();
                     }else{
-                        //Turn back to where it was clear
-                        robot.turnLeft();
-                        robot.turnLeft();
-                        robot.turnLeft();
-                        robot.move();
-                    }
-                }else {
-                    robot.turnLeft();
-                    if(robot.frontIsClear()){
-                        //Left turn
-                        robot.move();
-                    }else{
-                        robot.turnLeft();
-                        robot.turnLeft();
+                        turnAround();
+                        //Right Maze corner
                         if(robot.frontIsClear()){
-                            //Right Turn
                             robot.move();
-                        }else{
-                            //Robot is in an endpoint
-                            robot.turnLeft();
-                            robot.turnLeft();
-                            robot.turnLeft();
+                        }
+                        //Maze dead end
+                        else{
+                            turnRight();
                             robot.move();
                         }
                     }
-
                 }
             }else{
                 //The robot found the end
-                break;
+                finished = true;
             }
 
 		}
 
-	}// findExit 
+	}// findExit
+
+    //before: nothing
+    //after: Robot turns 180deg
+    private void turnAround(){
+        robot.setDelay(0);
+        robot.turnLeft();
+        robot.turnLeft();
+        robot.setDelay(DEFAULT_DELAY);
+    }
+
+    //before: nothing
+    //after: Robot makes a right turn by doing 3 left turns
+    private void turnRight(){
+        robot.setDelay(0);
+        robot.turnLeft();
+        robot.turnLeft();
+        robot.turnLeft();
+        robot.setDelay(DEFAULT_DELAY);
+    }
+
+    //before: front is clear
+    //after: turns left if there is no block to the left,
+    //       moves forward if not
+    private void checkLeft(){
+        robot.setDelay(0);
+        robot.turnLeft();
+        if(robot.frontIsClear()){
+            robot.setDelay(DEFAULT_DELAY);
+            robot.move();
+        }else{
+            //Turn back to where it was clear
+            turnRight();
+            robot.move();
+        }
+        robot.setDelay(DEFAULT_DELAY);
+    }
 }//MazeFinder

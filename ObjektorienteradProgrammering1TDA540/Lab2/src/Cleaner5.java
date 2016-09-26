@@ -1,5 +1,6 @@
 public class Cleaner5 {
         private Robot robot;
+        private final int DEFAULT_DELAY = 250;
         private Location startPosition;
         public static void main(String[] args) {
                 Cleaner5 cleaner = new Cleaner5();
@@ -9,8 +10,8 @@ public class Cleaner5 {
 
         private void createEnviroment() {
                 RobotWorld world = RobotWorld.load("src/square3.txt");
-                robot = new Robot(1, world.getNumCols() - 4, Robot.EAST, world);
-                robot.setDelay(250);
+                robot = new Robot(1, world.getNumCols() - 4, Robot.WEST, world);
+                robot.setDelay(DEFAULT_DELAY);
         }//createEnviroment 
 
 	//before: The room has four corridors, forming a square
@@ -27,7 +28,8 @@ public class Cleaner5 {
         // after: robot cleans up all dark blocks and stops at the starting position
         private void cleanCorridorUpToPosition(){
             startPosition = robot.getLocation();
-            //Prevents the robot from just standing still due to the while loop
+
+            //Starts the loop going because startingPosition will be equal to currentPosition the first time.
             clearBlockinFront();
 
             //Checks if the currentPosition is equal to the startingPosition
@@ -36,10 +38,9 @@ public class Cleaner5 {
                     clearBlockinFront();
                 } else {
                     robot.turnLeft();
-                    //If the robot is still facing a wall the direction is clockwise, that means it has to make a 180deg turn.
+                    //If the robot is still facing a wall the direction is clockwise, that means it has to turnAround.
                     if(!robot.frontIsClear()){
-                        robot.turnLeft();
-                        robot.turnLeft();
+                        turnAround();
                     }
                 }
             }
@@ -48,13 +49,19 @@ public class Cleaner5 {
         // before: none
         // after: robot cleans a single block in front of it if it is dark
         private void clearBlockinFront(){
-            //Move robot 1 block forward
             robot.move();
-            //Check if the block under the robot it dark
             if(robot.onDark()) {
-                //Make the block under the robot light
                 robot.makeLight();
             }
+        }
+
+        //before: nothing
+        //after: Robot turns 180deg
+        private void turnAround(){
+            robot.setDelay(0);
+            robot.turnLeft();
+            robot.turnLeft();
+            robot.setDelay(DEFAULT_DELAY);
         }
 }//Cleaner5
 

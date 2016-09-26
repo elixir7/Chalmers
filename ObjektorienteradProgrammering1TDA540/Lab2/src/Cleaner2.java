@@ -29,11 +29,9 @@ public class Cleaner2 {
         // after: robot cleans four blocks in front of him and makes a left turn
         private void clearCorridorInFront(){
                 for(int i = 0; i < 4; i++){
-                        //Move robot 1 block forward
                         robot.move();
                         //Check if the block under the robot it dark
                         if(robot.onDark()){
-                                //Make the block under the robot light
                                 robot.makeLight();
                         }
                 }

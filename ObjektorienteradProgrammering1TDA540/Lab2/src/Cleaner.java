@@ -26,7 +26,7 @@ public class Cleaner {
         }//cleanCorridors
 
         // before: none
-        // after: robot cleans four blocks in front of him and makes a left turn
+        // after: robot makes four blocks in front of him light and makes a left turn
         private void clearCorridorInFront(){
                 for(int i = 0; i < 4; i++){
                         robot.move();
