@@ -17,8 +17,8 @@ public class Upg12 {
 		double answer = 1;
 		double numb = 3;
 		//Loopas för de första 500 termerna
-		for(int i = 1; i <= 500; i++){
-			//OM talet är jämnt
+		for(int i = 1; i < 500; i++){
+			//Om talet är jämnt
 			if((i % 2) == 0){
 				answer += 1/numb;
 			}else{
@@ -35,22 +35,18 @@ public class Upg12 {
 		double answer = 1;
 		double numb = 3;
 		int counter = 1;
-		boolean bol = true;
 		
-		while(bol){
-			if((1/numb) < 0.000001){
-				bol = false;
+		while((1/numb) >= 0.000001){
+			//Om talet är jämnt
+			if((counter % 2) == 0){
+				answer += 1/numb;
+				
 			}else{
-				//OM talet är jämnt
-				if((counter % 2) == 0){
-					answer += 1/numb;
-					
-				}else{
-					answer -= 1/numb;
-				}
-				counter++;
-				numb += 2;
-			}	
+				answer -= 1/numb;
+			}
+			counter++;
+			numb += 2;
+			
 		}
 		return answer*4;
 	}

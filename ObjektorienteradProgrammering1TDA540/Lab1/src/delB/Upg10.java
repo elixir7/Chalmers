@@ -9,14 +9,16 @@ public class Upg10 {
 		
 		String input = JOptionPane.showInputDialog("Ange värden:");
 		
-		//Gör en scanner som tar flera värden i en textruta genom
-		Scanner scan = new Scanner(input);
-		double d = scan.nextDouble();
-		double A = scan.nextDouble();
-		double L = scan.nextDouble();
-		double f = scan.nextDouble();
-		
-		JOptionPane.showMessageDialog(null, "Båten är: " +  calc(d, A, L, f)); 
+		if(input!=null){
+			//Gör en scanner som tar flera värden i en textruta genom
+			Scanner scan = new Scanner(input);
+			double d = scan.nextDouble();
+			double A = scan.nextDouble();
+			double L = scan.nextDouble();
+			double f = scan.nextDouble();
+			
+			JOptionPane.showMessageDialog(null, "Båten är: " +  calc(d, A, L, f));
+		}
 	}
 	
 	//Metod som returnar en sträng med text om den blev godkänd eller inte

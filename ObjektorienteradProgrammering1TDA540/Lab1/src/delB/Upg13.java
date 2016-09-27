@@ -5,21 +5,25 @@ import javax.swing.JOptionPane;
 //Kontrollera vilket datum påsken infaller under specifikt år
 public class Upg13 {
 	public static void main(String [] arg){
-		boolean bol = true;
+		boolean finished = false;
+		
 		//Loop för input och test om input är giltigt
-		while(bol){
+		while(!finished){
 			String indata = JOptionPane.showInputDialog("Årtal mallen år 1900-2099");
-			int year = Integer.parseInt(indata);
-			if(year > 2099 || year < 1900){
-				bol = false;
-				JOptionPane.showMessageDialog(null, "Du angav inte ett år mellan 1900 och 2099!");
+			if(indata!=null){
+				int year = Integer.parseInt(indata);
+				if(year > 2099 || year < 1900){
+					JOptionPane.showMessageDialog(null, "Du angav inte ett år mellan 1900 och 2099!");
+				}else{
+					JOptionPane.showMessageDialog(null, easterCalc(year));
+				}
 			}else{
-				easterCalc(year);
+				finished = true;
 			}
 		}
 	}
 	//Metod som beräknar vilken dag påsken var beroende på vilket år
-	public static void easterCalc(int year){
+	public static String easterCalc(int year){
 		String answer;
 		
 		int y = year;
@@ -38,10 +42,9 @@ public class Upg13 {
 		//Annars är dagen 31 - d i mars
 		else{
 			int day = 31 + d;
-			answer =  "Påsken år " + Integer.toString(year) + " infaller den " + Integer.toString(day) + " April";
+			answer =  "Påsken år " + Integer.toString(year) + " infaller den " + Integer.toString(day) + " Mars";
 		}
-
-		JOptionPane.showMessageDialog(null, answer);
+		return answer;
 	}
 	
 }

@@ -9,12 +9,14 @@ public class Upg9 {
 	public static void main(String[] arg){
 		double speed, angle;
 		String indata = JOptionPane.showInputDialog("Speed:");
-		speed = Double.parseDouble(indata);
-		indata = JOptionPane.showInputDialog("Angle: (degrees)");
-		//Konverterar grader till radianer för att senare kunna användas med Math.sin()
-		angle = (Double.parseDouble(indata) / 360) * 2 * Math.PI;
-		
-		JOptionPane.showMessageDialog(null, "Height: " + String.format("%.3f", heightCalc(speed, angle)) + "m, Distance: " + String.format("%.3f", distanceCalc(speed, angle)) + "m");
+		if(indata!=null){
+			speed = Double.parseDouble(indata);
+			indata = JOptionPane.showInputDialog("Angle: (degrees)");
+			//Konverterar grader till radianer för att senare kunna användas med Math.sin()
+			angle = (Double.parseDouble(indata) / 360) * 2 * Math.PI;
+			
+			JOptionPane.showMessageDialog(null, "Height: " + String.format("%.3f", heightCalc(speed, angle)) + "m, Distance: " + String.format("%.3f", distanceCalc(speed, angle)) + "m");
+		}
 	}
 	
 	//Metod som räknar ut höjden med den givna formeln

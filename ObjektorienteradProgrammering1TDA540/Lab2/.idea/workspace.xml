@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b328df0f-198e-462b-bf0a-0130a3676da3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Cleaner.java" afterPath="$PROJECT_DIR$/src/Cleaner.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Cleaner2.java" afterPath="$PROJECT_DIR$/src/Cleaner2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Cleaner3.java" afterPath="$PROJECT_DIR$/src/Cleaner3.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Cleaner4.java" afterPath="$PROJECT_DIR$/src/Cleaner4.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Cleaner5.java" afterPath="$PROJECT_DIR$/src/Cleaner5.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Cleaner6.java" afterPath="$PROJECT_DIR$/src/Cleaner6.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Escaper.java" afterPath="$PROJECT_DIR$/src/Escaper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MazeFinder.java" afterPath="$PROJECT_DIR$/src/MazeFinder.java" />
-    </list>
+    <list default="true" id="b328df0f-198e-462b-bf0a-0130a3676da3" name="Default" comment="" />
     <ignored path="Lab2.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -689,12 +680,12 @@
       <workItem from="1474308283874" duration="11000" />
       <workItem from="1474308328792" duration="21000" />
       <workItem from="1474309352657" duration="301000" />
-      <workItem from="1474895215906" duration="4489000" />
+      <workItem from="1474895215906" duration="4917000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11288000" />
+    <option name="totallyTimeSpent" value="11716000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="711" extended-state="6" />

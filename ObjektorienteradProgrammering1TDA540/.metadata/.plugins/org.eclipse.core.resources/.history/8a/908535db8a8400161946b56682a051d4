@@ -1,0 +1,60 @@
+package delB;
+
+import javax.swing.*;
+import java.util.*;
+
+//räkna om yymmdd till mmddyy
+public class Upg11 {
+	public static void main(String[] arg){
+		boolean finished = false;
+		
+		while(!finished){
+			String input = JOptionPane.showInputDialog("Ange datum:");
+			if(input!=null){
+				Scanner scan = new Scanner(input);
+				int date = scan.nextInt();
+				converter(date);
+			}else{
+				//man har clickat på cancel vilket betyder att programet skall avslutas
+				finished = true;
+			}
+		}
+
+	}
+	
+	//metod som konverterar datum
+	public static void converter(int date){
+		//Tittar på de tiotalen och entalen genom att använda modulus yymmDD
+		int day = date % 100;
+		//Tittar på månaden genom att ta bort vilken dag det är och sedan använda modulus och division
+		int month = ((date - (day)) % 10000)/100;
+		//Tittar på året
+		int year = ((date - (day)) - month)/10000;
+		
+		String newDay, newMonth, newYear;
+		
+		//På grund av att en månad kan skrivas 03, 05 vilket uppfattas som 3 respektive 5 måste vi lägga till en nolla framför för att få ut rätt formaterad information
+		if(day < 10){
+			 newDay = "0" + Integer.toString(day);
+		}else{
+			newDay = Integer.toString(day);
+		}
+		
+		if(month < 10){
+			 newMonth = "0" + Integer.toString(month);
+		}else{
+			newMonth = Integer.toString(month);
+		}
+		
+		if(year < 10){
+			 newYear = "0" + Integer.toString(year);
+		}else{
+			newYear = Integer.toString(year);
+		}
+		
+		//Spottar ut det nya datumnet på skärmen
+		String newDate = newMonth + "/" + newDay + "/" + newYear;
+		JOptionPane.showMessageDialog(null, "Det nya datumet är: " + newDate);
+	}
+}
+

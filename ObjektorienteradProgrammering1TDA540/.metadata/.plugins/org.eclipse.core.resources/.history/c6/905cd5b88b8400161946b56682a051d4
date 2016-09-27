@@ -1,0 +1,47 @@
+package delB;
+
+import javax.swing.JOptionPane;
+
+//Kontrollera vilket datum påsken infaller under specifikt år
+public class Upg13 {
+	public static void main(String [] arg){
+		boolean finished = true;
+		//Loop för input och test om input är giltigt
+		while(bol){
+			String indata = JOptionPane.showInputDialog("Årtal mallen år 1900-2099");
+			int year = Integer.parseInt(indata);
+			if(year > 2099 || year < 1900){
+				bol = false;
+				JOptionPane.showMessageDialog(null, "Du angav inte ett år mellan 1900 och 2099!");
+			}else{
+				easterCalc(year);
+			}
+		}
+	}
+	//Metod som beräknar vilken dag påsken var beroende på vilket år
+	public static void easterCalc(int year){
+		String answer;
+		
+		int y = year;
+		int n = y - 1900;
+		int a = n % 19;
+		int b = (7*a + 1) / 19;
+		int m = (11*a + 4 - b) % 29;
+		int q = n / 4;
+		int w = (n + q + 31 - m) % 7;
+		int d = 25 - m - w;
+		
+		//Om d är positiv är dagen d i April
+		if(d > 0){
+			answer =  "Påsken år " + Integer.toString(year) + " infaller den " + Integer.toString(d) + " April";
+		}
+		//Annars är dagen 31 - d i mars
+		else{
+			int day = 31 + d;
+			answer =  "Påsken år " + Integer.toString(year) + " infaller den " + Integer.toString(day) + " April";
+		}
+
+		JOptionPane.showMessageDialog(null, answer);
+	}
+	
+}
