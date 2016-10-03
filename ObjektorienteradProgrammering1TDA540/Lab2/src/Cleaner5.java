@@ -15,21 +15,12 @@ public class Cleaner5 {
         }//createEnviroment 
 
 	//before: The room has four corridors, forming a square
-	//        The robot is located in beginning of one of the corridors
-	//        Each corridor might be different
-	//        Not all cells are dark
 	//after:  All cells in the corridors are light.
 	//        The robot has the same location and facing the same direction
         private void cleanCorridors() {
-            cleanCorridorUpToPosition();
-        }//cleanCorridors
-
-        // before: none
-        // after: robot cleans up all dark blocks and stops at the starting position
-        private void cleanCorridorUpToPosition(){
             startPosition = robot.getLocation();
 
-            //Starts the loop going because startingPosition will be equal to currentPosition the first time.
+            //Starts the loop going because startingPosition will be equal to currentPosition at the first check.
             clearBlockinFront();
 
             //Checks if the currentPosition is equal to the startingPosition
@@ -44,10 +35,10 @@ public class Cleaner5 {
                     }
                 }
             }
-        }
+        }//cleanCorridors
 
         // before: none
-        // after: robot cleans a single block in front of it if it is dark
+        // after: robot moves forward and cleans a single block in front of it if it is dark
         private void clearBlockinFront(){
             robot.move();
             if(robot.onDark()) {

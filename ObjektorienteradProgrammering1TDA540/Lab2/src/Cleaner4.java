@@ -14,10 +14,7 @@ public class Cleaner4 {
         }//createEnviroment 
 
 	//before: The room has four corridors, forming a rectangle
-	//        The robot is located in beginning of one of the corridors, facing the corridor
-	//        in counter-clockwise or clockwise direction.
-	//        Each corridor might be different
-	//        Not all cells are dark
+    //        The robot is located in beginning of one of the corridors
 	//after:  All cells in the corridors are light.
 	//        The robot has the same location and facing the same direction
         private void cleanCorridors() {

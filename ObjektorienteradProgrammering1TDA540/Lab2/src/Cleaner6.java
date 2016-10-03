@@ -19,19 +19,9 @@ public class Cleaner6 {
         }//createEnviroment 
 
 	//before: The corridors form a closed loop
-	//        The robot is located in beginning of one of the corridors, facing the corridor
-	//        in counter-clockwise or clockwise direction.
-	//        Each corridor might be different
-	//        Not all cells are dark
 	//after:  All cells in the corridors are light.
 	//        The robot has the same location and facing the same direction
         private void cleanCorridors() {
-            cleanCorridorUpToPosition();
-        }//cleanCorridors
-
-        // before: none
-        // after: robot cleans up all dark blocks and stops at the starting position
-        private void cleanCorridorUpToPosition(){
             startPosition = robot.getLocation();
 
             //Starts the loop going because startingPosition will be equal to currentPosition the first time.
@@ -49,7 +39,8 @@ public class Cleaner6 {
                     }
                 }
             }
-        }
+        }//cleanCorridors
+
 
     // before: none
     // after: robot cleans a single block in front of it if it is dark

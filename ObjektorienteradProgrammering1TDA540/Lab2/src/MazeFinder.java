@@ -18,36 +18,28 @@ public class MazeFinder {
 	//        The robot is at the entrance of the maze.
 	//after:  The robot is at the exit of the maze
 	public void findExit() {
-	    boolean finished = false;
-		while(!finished){
-		    if(!robot.atEndOfWorld()){
-                if(robot.frontIsClear()) {
-                    checkLeft();
+		while(!robot.atEndOfWorld()){
+            if(robot.frontIsClear()) {
+                checkLeft();
+            }else{
+                robot.turnLeft();
+                //Left Maze corner
+                if(robot.frontIsClear()){
+                    robot.move();
                 }else{
-                    robot.turnLeft();
-                    //Left Maze corner
+                    //Right Maze corner
+                    turnAround();
                     if(robot.frontIsClear()){
                         robot.move();
-                    }else{
-                        turnAround();
-                        //Right Maze corner
-                        if(robot.frontIsClear()){
-                            robot.move();
-                        }
+                    }
+                    else{
                         //Maze dead end
-                        else{
-                            turnRight();
-                            robot.move();
-                        }
+                        turnRight();
+                        robot.move();
                     }
                 }
-            }else{
-                //The robot found the end
-                finished = true;
             }
-
-		}
-
+        }
 	}// findExit
 
     //before: nothing
@@ -68,7 +60,7 @@ public class MazeFinder {
         robot.turnLeft();
         robot.setDelay(DEFAULT_DELAY);
     }
-
+//Maze dead end
     //before: front is clear
     //after: turns left if there is no block to the left,
     //       moves forward if not

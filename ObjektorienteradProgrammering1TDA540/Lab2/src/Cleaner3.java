@@ -15,8 +15,6 @@ public class Cleaner3 {
 	//before: The room has four corridors, forming a rectangle
 	//        The robot is located in beginning of one of the corridors, facing the corridor
 	//        in counter-clockwise direction.
-	//        Each corridor might be different
-	//        Not all cells are dark
 	//after:  All cells in the corridors are light.
 	//        The robot has the same location and facing the same direction
         private void cleanCorridors() {
@@ -31,7 +29,7 @@ public class Cleaner3 {
         private void clearCorridorInFront(){
             while(robot.frontIsClear()){
                 robot.move();
-                //Check if the block under the robot it dark
+                //Check if the block under the robot is dark
                 if(robot.onDark()){
                     robot.makeLight();
                 }
