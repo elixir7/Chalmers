@@ -27,7 +27,7 @@ public class Main {
     }//main
     */
 
-    //Uppgift 2
+    //Uppgift 2 part 1
     /*
     public static void main(String[] args) {
         SoundDevice device = new SoundDevice();
@@ -51,27 +51,10 @@ public class Main {
     */
 
     //Uppgift 3
-    public static void main(String[] args) throws FileNotFoundException {
-
+    /*
+    public static void main(String[] args) {
         SoundDevice device = new SoundDevice();
-        Song song = new Song(20);
-
-        File textSong = new File("elise.txt");
-        String path = textSong.getAbsolutePath();
-
-        System.out.println(path);
-        Scanner sc = new Scanner(path);
-
-        while(sc.hasNext()) {
-            String i = sc.next();
-            System.out.println(i);
-        }
-        sc.close();
-
-        song.play(device);
-        song.save(device.getFormat(),new File("testing"));
-
-        /*
+        Song song = new Song(10);
         song.add(MusicUtils.harmonic(-2, 0.5));
         song.add(MusicUtils.harmonic(1, 0.5));
         song.add(MusicUtils.harmonic(3, 0.7));
@@ -79,15 +62,44 @@ public class Main {
         song.add(MusicUtils.harmonic(-2, 0.5));
         song.add(MusicUtils.harmonic(1, 0.5));
         song.add(MusicUtils.harmonic(4, 0.3));
-        song.add(MusicUtils.harmonic(3, 0.6));
+        song.add(MusicUtils.harmonic(3, 0.7));
 
         song.add(MusicUtils.harmonic(-2, 0.5));
         song.add(MusicUtils.harmonic(1, 0.5));
         song.add(MusicUtils.harmonic(3, 0.7));
         song.add(MusicUtils.harmonic(1, 0.5));
         song.add(MusicUtils.harmonic(-2, 0.7));
-        */
+        song.play(device);
+        song.save(device.getFormat(),new File("sinetest.wav"));
     }//main
+    */
+
+    //Uppgift 3
+    public static void main(String[] args) throws FileNotFoundException {
+
+        SoundDevice device = new SoundDevice();
+        Song song = new Song(20);
+
+        File testSong = new File("src/elise.txt");
+        Scanner sc = new Scanner(testSong);
+
+        while(sc.hasNextLine()) {
+            if(sc.hasNext()){
+                double pitch = sc.nextDouble();
+                double duration = sc.nextDouble();
+                song.add(MusicUtils.note((int)pitch, duration));
+                System.out.println(Double.toString(pitch) + " " + Double.toString(duration));
+            }
+            else{
+                break;
+            }
+        }
+        sc.close();
+
+        song.play(device);
+        song.save(device.getFormat(),new File("testing"));
+    }//main
+
 
 
 

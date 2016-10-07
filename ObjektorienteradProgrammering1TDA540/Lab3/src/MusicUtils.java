@@ -27,7 +27,7 @@ public class MusicUtils {
         double[] a = new double[n];
 
         //Mutekonstant
-        double K = 0.498;
+        double K = 0.499;
 
 
         double p = SoundDevice.SAMPLING_RATE / freq;
@@ -49,7 +49,6 @@ public class MusicUtils {
     public static double[] note(int pitch, double duration){
 
         double freq = 440 * Math.pow(2, ((double)pitch/12));
-        System.out.println(Double.toString(freq));
 
         return pluck(freq, duration);
     }//note
