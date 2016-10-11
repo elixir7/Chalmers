@@ -4,6 +4,8 @@ import java.util.*;
 public class Main {
 
     //Pre Uppgift 1
+    //before: nothing
+    //after: plays two notes mimicking a sine wave
     /*
     public static void main(String[] args) {
         SoundDevice device = new SoundDevice();
@@ -16,6 +18,8 @@ public class Main {
     */
 
     //Uppgift 1
+    //before: nothing
+    //after: plays two notes mimicking plucking a string
     /*
     public static void main(String[] args) {
         SoundDevice device = new SoundDevice();
@@ -27,7 +31,9 @@ public class Main {
     }//main
     */
 
-    //Uppgift 2 part 1
+    //Uppgift 2
+    //before: nothing
+    //after: plays "Gubben noak" with notes mimicking plucking a string and saves the song as a wav file
     /*
     public static void main(String[] args) {
         SoundDevice device = new SoundDevice();
@@ -51,6 +57,8 @@ public class Main {
     */
 
     //Uppgift 3
+    //before: nothing
+    //after: plays "Smoke on the water" with notes of harmonicas and saves the song as a wav file
     /*
     public static void main(String[] args) {
         SoundDevice device = new SoundDevice();
@@ -70,37 +78,51 @@ public class Main {
         song.add(MusicUtils.harmonic(1, 0.5));
         song.add(MusicUtils.harmonic(-2, 0.7));
         song.play(device);
-        song.save(device.getFormat(),new File("sinetest.wav"));
+        song.save(device.getFormat(),new File("smoke-on-the-water.wav"));
     }//main
     */
 
-    //Uppgift 3
+    //Uppgift 4
+    //before: takes a textfile (.txt) to read notes and duration from
+    //        takes an integer as the second parameter to set the tempo (default: 240notes/min)
+    //after: creates a (.wav) file with the information of the submitted file
     public static void main(String[] args) throws FileNotFoundException {
 
         SoundDevice device = new SoundDevice();
-        Song song = new Song(20);
+        Song song = new Song(15);
 
-        File testSong = new File("src/elise.txt");
+        //the file name is supplied by "Program Arguments"
+        File testSong = new File(args[0]);
         Scanner sc = new Scanner(testSong);
 
-        while(sc.hasNextLine()) {
-            if(sc.hasNext()){
-                double pitch = sc.nextDouble();
-                double duration = sc.nextDouble();
-                song.add(MusicUtils.note((int)pitch, duration));
-                System.out.println(Double.toString(pitch) + " " + Double.toString(duration));
-            }
-            else{
-                break;
+
+        //k is the number of notes per minute (tempo)
+        double k;
+        //if tempo is supplied via program arguments, set the tempo, if not use 240notes/min
+        if (args[1] != null) {
+            k = 240 / Double.parseDouble(args[1]);
+        } else {
+            k = 1;
+        }
+
+
+        boolean finishedReadingFile = false;
+
+        while (!finishedReadingFile) {
+            if (sc.hasNextLine() && sc.hasNext()) {
+                int pitch = sc.nextInt();
+                double duration = sc.nextDouble() * k;
+                song.add(MusicUtils.note(pitch, duration));
+            } else {
+                finishedReadingFile = true;
             }
         }
+
         sc.close();
 
         song.play(device);
-        song.save(device.getFormat(),new File("testing"));
+        song.save(device.getFormat(), new File("elise.wav"));
     }//main
-
-
 
 
 }//Main
