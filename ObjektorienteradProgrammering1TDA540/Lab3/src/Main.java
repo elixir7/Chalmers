@@ -1,5 +1,7 @@
+import javax.swing.*;
 import java.io.*;
 import java.util.*;
+import java.lang.*;
 
 public class Main {
 
@@ -83,8 +85,8 @@ public class Main {
     */
 
     //Uppgift 4
-    //before: takes a textfile (.txt) to read notes and duration from
-    //        takes an integer as the second parameter to set the tempo (default: 240notes/min)
+    //before: takes a textfile (.txt) to read notes and duration from as the first argument
+    //        takes an integer as the second parameter to set the tempo as the second argument (default: 240notes/min)
     //after: creates a (.wav) file with the information of the submitted file
     public static void main(String[] args) throws FileNotFoundException {
 
@@ -92,36 +94,41 @@ public class Main {
         Song song = new Song(15);
 
         //the file name is supplied by "Program Arguments"
-        File testSong = new File(args[0]);
-        Scanner sc = new Scanner(testSong);
+        if(args.length >= 1 ){
+            File testSong = new File(args[0]);
 
+            Scanner sc = new Scanner(testSong);
 
-        //k is the number of notes per minute (tempo)
-        double k;
-        //if tempo is supplied via program arguments, set the tempo, if not use 240notes/min
-        if (args[1] != null) {
-            k = 240 / Double.parseDouble(args[1]);
-        } else {
-            k = 1;
-        }
-
-
-        boolean finishedReadingFile = false;
-
-        while (!finishedReadingFile) {
-            if (sc.hasNextLine() && sc.hasNext()) {
-                int pitch = sc.nextInt();
-                double duration = sc.nextDouble() * k;
-                song.add(MusicUtils.note(pitch, duration));
+            //k is second per whole note(tempo)
+            double k;
+            //if tempo is supplied via program arguments, set the tempo, if not use 240notes/min
+            if (args.length == 2) {
+                k = 240 / Double.parseDouble(args[1]);
             } else {
-                finishedReadingFile = true;
+                k = 1;
+                System.out.println("Tempo was not supplied via program arguments, setting tempo to 240notes/min");
             }
+
+            boolean finishedReadingFile = false;
+
+            while (!finishedReadingFile) {
+                if (sc.hasNextLine() && sc.hasNext()) {
+                    int pitch = sc.nextInt();
+                    double duration = sc.nextDouble() * k;
+                    song.add(MusicUtils.note(pitch, duration));
+                } else {
+                    finishedReadingFile = true;
+                }
+            }
+
+            sc.close();
+
+            song.play(device);
+            song.save(device.getFormat(), new File("elise.wav"));
+
+        }else{
+            JOptionPane.showMessageDialog(null, "Text file was not supplied via program arguments! \nTry Again");
         }
-
-        sc.close();
-
-        song.play(device);
-        song.save(device.getFormat(), new File("elise.wav"));
     }//main
 
 
