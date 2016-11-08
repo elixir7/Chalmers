@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bef34cba-8249-445c-a9d6-08feee34596a" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Lab3/test.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/testing" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/testing.wav" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elise.wav" afterPath="$PROJECT_DIR$/elise.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
     </list>
     <ignored path="Lab3.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -644,12 +638,12 @@
       <workItem from="1476197015849" duration="1078000" />
       <workItem from="1476202839139" duration="147000" />
       <workItem from="1476884559491" duration="1402000" />
-      <workItem from="1478002491422" duration="591000" />
+      <workItem from="1478002491422" duration="939000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19367000" />
+    <option name="totallyTimeSpent" value="19715000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="711" extended-state="6" />
