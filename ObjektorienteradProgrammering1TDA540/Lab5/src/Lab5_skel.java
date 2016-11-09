@@ -8,7 +8,9 @@ public class Lab5_skel {
         //doCommandLine();
         //System.out.println(toRobber("Hej på dig!"));
         //System.out.println(toPigLatin("Hej på dig Eric"));
+        //System.out.println(toPigLatinV2("Apelsin hej på dig Eric"));
         //doMi2Mu();
+        //System.out.print(rule3("MIIIUIII"));
     }
 
     // -------------------------- 1 ------------------------------
@@ -128,18 +130,52 @@ public class Lab5_skel {
                     for(int h = min; h < max; h++){
                         if(isVowel(sentenceArray[h])) {
                             for(int u = h; u < max; u++){
-                                preVowelStr += sentenceArray[u];
+                                postVowelStr += sentenceArray[u];
                             }
                             for(int t = min; t < h; t++){
-                                postVowelStr += sentenceArray[t];
+                                preVowelStr += sentenceArray[t];
                             }
-                            output += preVowelStr + postVowelStr + "ay ";
+                            output += postVowelStr + preVowelStr + "ay ";
+                            //Break the for loop
+                            break;
                         }
                     }
                     //Sets the new min to the start of the next word
                     min = max + 1;
                 }
 
+            }
+        }
+        return output;
+    }
+
+    //before: nothing
+    //after: translates a sentence to "Pig Latin" and returns it
+    //Note: This uses the function split()
+    public static String toPigLatinV2(String text){
+        String output = "";
+        String[] wordArray = text.split(" ");
+
+        for(int i = 0; i < wordArray.length; i++){
+            char[] charWordArray = wordArray[i].toCharArray();
+            if(isVowel(charWordArray[0])){
+                output += wordArray[i] + "way ";
+            }else{
+                String preVowelStr = "";
+                String postVowelStr = "";
+                for(int k = 0; k < charWordArray.length; k++){
+                    if(isVowel(charWordArray[k])) {
+                        for(int u = 0; u < k; u++){
+                            preVowelStr += charWordArray[u];
+                        }
+                        for(int t = k; t < charWordArray.length; t++){
+                            postVowelStr += charWordArray[t];
+                        }
+                        output += postVowelStr + preVowelStr + "ay ";
+                        //Break the for loop
+                        break;
+                    }
+                }
             }
         }
         return output;
@@ -163,6 +199,7 @@ public class Lab5_skel {
     //before: nothing
     //after: solves the muPuzzle by brute force
     public static void doMi2Mu() {
+
         String startingStr = "MI";
         String[] resultArr = new String[257];
         resultArr[0] = startingStr;
@@ -170,9 +207,13 @@ public class Lab5_skel {
         //Loops 4^3 times becuase each run makes 4 results -> 256
         for (int i = 0; i < 64; i++) {
 
+            //Apply the first rule and and store it in the result array
             resultArr[tempIndex] = rule1(resultArr[i]);
+            //Prints out the result to the user
             System.out.println(resultArr[tempIndex]);
+            //Checks if "MU" is found
             muChecker(resultArr[tempIndex]);
+            //Increase the resultArray Index variable by one so that the next rule can be run
             tempIndex++;
 
             resultArr[tempIndex] = rule2(resultArr[i]);
@@ -189,13 +230,11 @@ public class Lab5_skel {
             System.out.println(resultArr[tempIndex]);
             muChecker(resultArr[tempIndex]);
             tempIndex++;
-
-
         }
     }
 
     //before: nothing
-    //after: Prints out "FOUND!" if "MU" is found
+    //after: Prints out "FOUND!" if "MU" is found with a dialog box
     public static void muChecker(String str){
         if(str == "MU"){
             JOptionPane.showMessageDialog(null, "FOUND!");
@@ -234,13 +273,9 @@ public class Lab5_skel {
         String transformedString = "";
         for(int i = 0; i < charArr.length; i++){
             if(i < charArr.length - 2){
-                if(charArr[i] == 'I'){
-                    if(charArr[i+1] == 'I'){
-                        if(charArr[i+2] == 'I'){
-                            transformedString += "U";
-                            i += 2;
-                        }
-                    }
+                if(charArr[i] == 'I' && charArr[i+1] == 'I' && charArr[i+2] == 'I') {
+                    transformedString += "U";
+                    i += 2;
                 }
             }else{
                 transformedString += charArr[i];
@@ -257,10 +292,8 @@ public class Lab5_skel {
         for(int i = 0; i < charArr.length; i++){
             //Makes sure we doesn't get indexOutOfBound
             if(i < charArr.length - 1){
-                if(charArr[i] == 'U'){
-                    if(charArr[i+1] == 'U'){
-                        i += 1;
-                    }
+                if(charArr[i] == 'U' && charArr[i+1] == 'U'){
+                    i += 1;
                 }else{
                     transformedString += charArr[i];
                 }
