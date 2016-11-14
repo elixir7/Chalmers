@@ -1,3 +1,4 @@
+import java.io.*;
 import javax.swing.*;
 import java.util.Scanner;
 
@@ -6,11 +7,9 @@ public class Lab5_skel {
     public static void main(String[] args) {
         //doCollatz();
         //doCommandLine();
-        //System.out.println(toRobber("Hej på dig!"));
+        //System.out.println(toRobber("Hej på dig, vad gör du?"));
         //System.out.println(toPigLatin("Hej på dig Eric"));
-        //System.out.println(toPigLatinV2("Apelsin hej på dig Eric"));
         //doMi2Mu();
-        //System.out.print(rule3("MIIIUIII"));
     }
 
     // -------------------------- 1 ------------------------------
@@ -49,11 +48,11 @@ public class Lab5_skel {
         boolean finished = false;
         while(!finished){
             switch(sc.nextLine()){
-                case "p":
+                case "r":
                     System.out.println("Input text:");
                     System.out.println(toRobber(sc.nextLine()));
                     break;
-                case "r":
+                case "p":
                     System.out.println("Input text:");
                     System.out.println(toPigLatin(sc.nextLine()));
                     break;
@@ -76,7 +75,7 @@ public class Lab5_skel {
         char[] sentenceArray = text.toCharArray();
         for(int i = 0; i < sentenceArray.length; i++){
             if(isConsonant(sentenceArray[i])){
-                output += sentenceArray[i] + "o" + sentenceArray[i];
+                output += sentenceArray[i] + "o" + Character.toLowerCase(sentenceArray[i]);
             }else{
                 output += sentenceArray[i];
             }
@@ -88,7 +87,8 @@ public class Lab5_skel {
     //before: nothing
     //after: returns true is supplied character is a consonant
     public static boolean isConsonant(char ch) {
-        String consonantAlphabet = "BCDFGHJKLMNPQRSTVWXZbcdfghjklmnpqrstvwxz";
+        String consonantAlphabet = "BCDFGHJKLMNPQRSTVWXZ";
+        consonantAlphabet += consonantAlphabet.toLowerCase();
         char[] consonantArray = consonantAlphabet.toCharArray();
         for(int i = 0; i < consonantArray.length; i++){
             if(ch == consonantArray[i]){
@@ -101,60 +101,9 @@ public class Lab5_skel {
     // ----------------- 4  ------------------------------
     //before: nothing
     //after: translates a sentence to "Pig Latin" and returns it
-    public static String toPigLatin(String text) {
+    public static String toPigLatin(String text){
         String output = "";
-        text = text + " ";
-        char[] sentenceArray = text.toCharArray();
-        //Min will become the index for the start of a word
-        int min = 0;
-        //Max will become the index for the end of a word
-        int max = 0;
-        int vowelIndex;
-        for(int i = 0; i < sentenceArray.length; i++){
-            //A space marks the end of a word.
-            if(sentenceArray[i] == ' '){
-                max = i;
-                //If the first letter of the word is a Vowel, apply the first rule
-                if(isVowel(sentenceArray[min])){
-                    String tempVowelStr = "";
-                    for(int k = min; k < max; k++){
-                        tempVowelStr += sentenceArray[k];
-                    }
-                    output += tempVowelStr + "way ";
-                    //Sets the new min to the start of the next word
-                    min = max + 1;
-                } else{
-                    String preVowelStr = "";
-                    String postVowelStr = "";
-                    //Remove the preVowel part from the word and add it to the end, then add "ay"
-                    for(int h = min; h < max; h++){
-                        if(isVowel(sentenceArray[h])) {
-                            for(int u = h; u < max; u++){
-                                postVowelStr += sentenceArray[u];
-                            }
-                            for(int t = min; t < h; t++){
-                                preVowelStr += sentenceArray[t];
-                            }
-                            output += postVowelStr + preVowelStr + "ay ";
-                            //Break the for loop
-                            break;
-                        }
-                    }
-                    //Sets the new min to the start of the next word
-                    min = max + 1;
-                }
-
-            }
-        }
-        return output;
-    }
-
-    //before: nothing
-    //after: translates a sentence to "Pig Latin" and returns it
-    //Note: This uses the function split()
-    public static String toPigLatinV2(String text){
-        String output = "";
-        String[] wordArray = text.split(" ");
+        String[] wordArray = text.toLowerCase().split(" ");
 
         for(int i = 0; i < wordArray.length; i++){
             char[] charWordArray = wordArray[i].toCharArray();
@@ -168,6 +117,7 @@ public class Lab5_skel {
                         for(int u = 0; u < k; u++){
                             preVowelStr += charWordArray[u];
                         }
+
                         for(int t = k; t < charWordArray.length; t++){
                             postVowelStr += charWordArray[t];
                         }
@@ -185,7 +135,8 @@ public class Lab5_skel {
     //before: nothing
     //after: returns true is supplied character is a vowel
     public static boolean isVowel(char ch) {
-        String vowelAlphabet = "AEIOUYÅÄÖaeiouyåäö";
+        String vowelAlphabet = "AEIOUYÅÄÖ";
+        vowelAlphabet += vowelAlphabet.toLowerCase();
         char[] vowelArray = vowelAlphabet.toCharArray();
         for(int i = 0; i < vowelArray.length; i++){
             if(ch == vowelArray[i]){
@@ -198,6 +149,12 @@ public class Lab5_skel {
     // -------------------- 6 -------------------------
     //before: nothing
     //after: solves the muPuzzle by brute force
+    //note: "MU" is never found because all instances of I will not be divisible by 3
+    //Explanation:
+    //From the start we have 1 I which is not divisible by 3.
+    //Doubling a number which is not divisible by 3 does not make it divisible by 3.
+    //Removing 3 from a number that is not divisible by 3 does not make it divisible by 3.
+    //Which means that we can never get "MU" from "MI" by applying the rules.
     public static void doMi2Mu() {
 
         String startingStr = "MI";
