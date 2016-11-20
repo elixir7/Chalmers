@@ -1,0 +1,158 @@
+
+*** Veckouppgifter 2 för Z ***
+
+Alla uppgifter löser man genom att skriva klart metoder i kodskelettet,
+WE2_skel och lägga till klasser i nya filer. Ni behöver aldrig kontrollera indata,
+användaren skriver alltid rätt.
+Redovisas allt genom att demo-köra för handledare.
+
+OBS! Allt skrivs på engelska (alla namn)
+
+Uppgifter
+
+1.) Skapa en klass "Dice" för en tärning med valfritt antal sidor. Antal sidor anges som
+parameter till konstruktorn (man kan inte ändra antalet sidor efter man skapat en instans).
+I IntelliJ: Markera mappen src, högerklicka > New > Java Class > Fyll i namn (Dice) > Ok.
+Lägg till en metod roll() som ger resultatet r, 1<= r <= antal sidor. Spara dessutom undan
+resultatet i en instansvariabel (= tärningen kommer ihåg senaste resultatet).
+För slupmtal används instanser av klassen Random (färdig Java klass)
+
+Skapa en "sexsidig" instans av Dice och kasta den 100 gånger.
+Skriv ut resultatet för varje kast.
+
+Exempel
+3 2 6 3 2 5 2 1 5 5 5 1 5 6 6 2 1 3 3 1 1 2 4 1 2 4 4 5 6 5 5 5 5 2 3 6 1 6 6 1 4 3 6 4 1 4 3 3 5 1 ...
+-----------------------------------------------------------------------------------------------
+
+2) Lägg till en metod i klassen Dice som ger som resultat något tal
+*utom* det man anger som parameter till metoden.
+Skapa en instans (6-sidig) och kasta 60 ggr. Skriv ut valt (exkluderat) tal och resultat
+
+Exempel ( exkluderat : resultat)
+1:2 2:1 3:5 4:5 5:3 6:3 1:3 2:3 3:4 4:5 5:3 6:2 1:5 2:3 3:6 4:6 5:1 6:2 1:4 2:3 ...
+
+----------------------------------------------------------------------------------------------------
+
+3) Skapa en klass, Player1, för en tärningsspelare.
+Spelaren skall ha ett namn och en referens till en tärning.
+Båda dessa ges som argument till konstruktorn. Skapa instanser och
+låt spelaren kasta tärningen 5 ggr. Skriv ut resultat
+
+Exempel
+Player is otto
+6 3 5 2 3
+
+------------------------------------------------------------------------------------------
+4) Skapa 2 instanser av Player1 och en tärning. Låt spelarna dela på en tärning (referera samma tärning)
+Låt varje spelare kasta 5 ggr. Skriv ut resultat för varje
+
+Exempel
+Player is otto
+3 4 1 5 3
+Player is fia
+1 3 5 5 1
+
+--------------------------------------------------------------------------------------------
+
+5) Skapa en klass DiceCup (tärningsmugg, see http://www.spel-landet.se/group.asp?group=260).
+Muggen innehåller 5 *olika* 6 sidiga tärningar.
+Tärningarna kopplas till muggen m.h.a. konstruktorn (som tar ett fält av tärningar).
+Skapa en metod i muggen som returnerar totalresultatet då alla tärningar kastats.
+
+Skapa en klass Player2 som använder muggen (och har ett namn).
+Resultatet då spelaren kastat muggen skall accumuleras i spelarobjektet (en instansvariabel).
+Lägg till en metod i spelaren där vi kan avläsa vilket accumulerat resultat spelaren har.
+Instansiera och koppla alla objekt. Låt spelaren kasta 2 ggr. Skriv ut accumulerat resultat efter kasten.
+
+Exempel
+arne 20
+arne 31
+
+--------------------------------------------------------------------------------------------
+
+6) Komplettera uppg. 5 genom att överskugga toString()-metoden i både Dice och DiceCup.
+Lägg in en utskrift i Player2 så att man, förutom accumulerad spelarsumma, kan se varje
+tärnings resultat (i metoden där själva kastet sker).
+
+Exempel
+DiceCup{
+    dices =[Dice{result=4}, Dice{result=3}, Dice{result=1}, Dice{result=6}, Dice{result=6}]}
+arne 20
+DiceCup{dices=[Dice{result=2}, Dice{result=1}, Dice{result=4}, Dice{result=1}, Dice{result=3}]}
+arne 31
+
+------------------------------------------------------------------------------------------
+7) Skapa 5 spelare (Player2) som delar på en tärningsmugg. Låt varje spelare kasta muggen en
+gång (tärningarna i muggen alltså ...). Sök ut den spelare som fick högst totalsumma.
+Skriv ut denne.
+
+Exempel (med överskuggade toString() metoder)
+DiceCup{dices=[Dice{result=1}, Dice{result=3}, Dice{result=6}, Dice{result=4}, Dice{result=3}]}
+DiceCup{dices=[Dice{result=4}, Dice{result=6}, Dice{result=2}, Dice{result=5}, Dice{result=1}]}
+DiceCup{dices=[Dice{result=5}, Dice{result=5}, Dice{result=3}, Dice{result=5}, Dice{result=1}]}
+DiceCup{dices=[Dice{result=5}, Dice{result=4}, Dice{result=1}, Dice{result=5}, Dice{result=2}]}
+DiceCup{dices=[Dice{result=3}, Dice{result=6}, Dice{result=6}, Dice{result=3}, Dice{result=6}]}
+0:17    (spelarna heter 0, 1, .., jobbigt att skriva namn på alla)
+1:18
+2:19
+3:17
+4:24
+Max 4:24   (spelare 4 vann med 24 poäng)
+
+
+---------------------------------------------------------------------
+8) Skapa ett litet spel där två spelare turas om att kasta ett mynt.
+Så länge man får samma sida får man fortsätta (och får antal poäng lika med
+antalet lika kast). Spelet styrs med en kommandorad med alternativen
+
+f - flip (aktuell spelare kastar, om spelaren får annat resultat än föregående får han inte fortsätta)
+p - pass (byt spelare =  ny aktuell spelare)
+q - quit (avsluta)
+
+Man kör tills man tröttnar då spelare med högst poäng vinner.
+
+Du behöver en klass Player3 och en klass Coin. Skapa dessa.
+Lämpliga metoder;
+Coin - flip(), ger "head eller "tail"
+Player3 - flipCoin(), kastar myntet m.m.
+        - sameAsLast(), kontrollerar om föregående resultat är samma
+        - reset(), nollställer
+        - addPoint(), ökar poäng
+        - ... och några till
+
+Exempel (toString() överskuggad i Player3)
+Coin flip game!
+Player3{name='olle', oldResult='null', newResult='null', points=0}
+> f
+Player3{name='olle', oldResult='null', newResult='head', points=0}
+> f
+Player3{name='olle', oldResult='head', newResult='head', points=0}  // Får poäng här...
+> f
+Player3{name='olle', oldResult='head', newResult='tail', points=1}  // ..visas här
+> f
+You may not flip, pass over coin!
+Player3{name='olle', oldResult='head', newResult='tail', points=1}
+> p
+Player3{name='lisa', oldResult='null', newResult='null', points=0}
+> f
+Player3{name='lisa', oldResult='null', newResult='head', points=0}
+> f
+Player3{name='lisa', oldResult='head', newResult='tail', points=0}
+> f
+You may not flip, pass over coin!
+Player3{name='lisa', oldResult='head', newResult='tail', points=0}
+> p
+Player3{name='olle', oldResult='null', newResult='null', points=1}
+> f
+Player3{name='olle', oldResult='null', newResult='tail', points=1}
+> f
+Player3{name='olle', oldResult='tail', newResult='tail', points=1}
+> f
+Player3{name='olle', oldResult='tail', newResult='head', points=2}
+> f
+You may not flip, pass over coin!
+Player3{name='olle', oldResult='tail', newResult='head', points=2}
+> f
+You may not flip, pass over coin!
+Player3{name='olle', oldResult='tail', newResult='head', points=2}
+>
