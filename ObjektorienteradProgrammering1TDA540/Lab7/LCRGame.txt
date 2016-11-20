@@ -1,0 +1,26 @@
+
+*** LCR Spelet ***
+
+I LCR spelet deltar 3 spelare. Inledningsvis
+får de vardera 3 brickor (chip).
+Spelet spelas med 3 tärningar med sidorna markerade med 
+"L", "C", "R", ".", "." och "." (sex sidor). 
+
+Spelets gång
+1. Aktuell spelare kastar så många tärningar som brickor
+han/hon har, dock max tre.
+2. Beroende på utfall fördelar spelaren sina brickor enligt
+"L" ge spelaren till vänster en av sina brickor.
+"C" lägger en bricka i en gemensam hög (brickan "försvinner").
+"R" ge spelaren till höger en av sina brickor.
+"." gör inget.
+3. Nästa spelare medurs börjar vid punkt 1.
+
+Då alla spelare utom 1 har slut på brickor är spelet slut. Spelaren
+med brickor är vinnare.
+Ingen spelare utgår under spelets gång. Spelare med 0
+brickor är kvar men kastar tärningen 0 gånger (spelaren
+kan få brickor igen).
+
+
+

@@ -1,0 +1,105 @@
+
+*** Veckouppgifter 3 för Z ***
+
+Ni behöver aldrig kontrollera indata,
+användaren skriver alltid rätt.
+Redovisa genom att demo-köra för handledare.
+
+
+Uppgift
+
+Skapa en kommandoradbaserad version av LCR-spelet, se
+beskrivningar i LCRGame.txt och
+http://en.wikipedia.org/wiki/LCR_(dice_game)
+Exempelkörning längst ner.
+
+Arbetsgång
+1) Ni behöver 3 klasser (inkl. top-level klassen, exklusive CommandLineLCR
+som är delvis given). Vilka kan behövas?
+
+Ans: Dice, Player, Game
+
+2) Välj den klass som inte har kopplingar till någon annan klass. Arbeta med denna.
+Vilka instansvariaber och metoder kan behövas? Implementera dessa.
+Överskugga toString så att något lättbegripligt skrivs ut.
+Testa genom att skapa ett objekt i CommandLineLCR main-metoden
+(se kommentar i koden).
+
+Ans: Dice.
+Sides är en array som innehåller alla sidor.
+lastRoll ska innehålla resultatet på förra rullning
+roll() ska slumpa fram en sida på tärningen och returna den.
+toString ska returna lastRoll
+
+
+3) Fortsätt på samma sätt med den klass som har *minst* antal kopplingar
+(d.v.s troligen bara behöver objekt av föregående klass)
+
+4) Vilka instansvariabler behöver top-level objektet? Lägg till
+dessa samt skapa en kontruktor som sätter värdena.
+
+5) Gör klart metoden buildLCRGame i CommandLineLCR. Metoden bygger hela objekt modellen
+samt returnerar denna.
+
+6) Gör klar render-metoden i CommandLineLCR
+
+5) Utgå från kommandoraden och försök hitta metoder i top-level objektet
+som skall anropas då man väljer något. Kontrollera alltid om det finns
+något användbart i de kopplade objekten.
+Jobba med en sådan metod i taget tills allt är klart.
+TIPS Några tänkbara metoder
+- getPlayerRight, returnerar spelaren till höger om aktuell spelare
+- getPlayerLeft, returnerar spelaren till vänster om aktuell spelare
+- getNRolls, avgör antal kast för aktuell spelare utifrån dennes antal brickor.
+
+
+---------------------------------------------------------------------------
+Exampelkörning
+
+LCR started
+Players are
+{Pelle,3} {Fia,3} {Sven,3}
+Player is {Pelle,3}
+> r
+L  L  .
+{Pelle,1} {Fia,3} {Sven,5}
+Player is {Sven,5}
+> r
+.  .  R
+{Pelle,2} {Fia,3} {Sven,4}
+Player is {Fia,3}
+> r
+.  C  .
+{Pelle,2} {Fia,2} {Sven,4}
+Player is {Pelle,2}
+> r
+.  .
+{Pelle,2} {Fia,2} {Sven,4}
+Player is {Sven,4}
+> r
+.  .  R
+{Pelle,3} {Fia,2} {Sven,3}
+Player is {Fia,2}
+> r
+.  .
+{Pelle,3} {Fia,2} {Sven,3}
+Player is {Pelle,3}
+> r
+R  .  .
+{Pelle,2} {Fia,3} {Sven,3}
+Player is {Sven,3}
+> r
+R  .  .
+{Pelle,3} {Fia,3} {Sven,2}
+Player is {Fia,3}
+> r
+R  R  L
+{Pelle,4} {Fia,0} {Sven,4}
+Player is {Pelle,4}
+> q
+R  R  L
+{Pelle,4} {Fia,0} {Sven,4}
+Game aborted
+
+
+
