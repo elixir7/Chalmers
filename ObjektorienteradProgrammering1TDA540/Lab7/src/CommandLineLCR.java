@@ -1,76 +1,89 @@
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
 import java.util.Scanner;
 
-/**
- *  This class is a skeleton, don't change the over all
- *  structure just uncomment and add code where needed (TODOs)
- */
 public class CommandLineLCR {
 
     public static void main(String[] args) {
-
-        // Use this as an test area when starting out
-        // I.e. instantiate objects and test
-        // Later just comment out (don't erase the test code!)
-
-
-
-        // Uncomment this when you have a model
-        //new CommandLineLCR().run();
+        CommandLineLCR game = new CommandLineLCR();
+        game.run();
     }
 
-    // Uncomment below when possible
-    public static void run(){
-        boolean done = false;  
-        // ... = buildLCRGame();
-        System.out.println("LCR started");
-        System.out.print("Players are ");
-        //render( ... );
+    public void run(){
+        boolean done = false;
         Scanner s = new Scanner(System.in);
+
+        System.out.println("Welcome to the LCR Game!");
+        System.out.println("How many players?");
+
+        String cmd = s.nextLine();
+
+        //Find out how many players there are and what their names are.
+        int numberOfPlayers = Integer.parseInt(cmd);
+        String[] playerNames = new String[numberOfPlayers];
+        for(int i = 0; i < numberOfPlayers; i++){
+            System.out.println("Player " + Integer.toString(i + 1) + "'s name?");
+            cmd = s.nextLine();
+            playerNames[i] = cmd;
+        }
+
+        //Build the game by supplying all the player names
+        Game lcr = buildLCRGame(playerNames);
+
+        System.out.println("Players are: ");
+        render(lcr);
+
         while (!done) {
-            //System.out.println("Player is " + ...);
+            System.out.println("Player is " + lcr.getActivePlayerName());
+
             System.out.print("> ");
-            String cmd = s.nextLine();
+            cmd = s.nextLine();
             switch (cmd) {
                 case "r":
-                    // What to do here?
+                    lcr.playTurn();
+                    if(lcr.winnerExists()){
+                        done = true;
+                        s.close();
+                    }
                     break;
                 case "q":
                     done = true;
                     break;
                 default:
-                    System.out.println("?");
+                    System.out.println("Invalid input!");
             }
+            render(lcr);
         }
 
-        /* TODO
-        if ( ... ) {
-            System.out.println("Game over! Winner is " + lcr.getWinner());
+        if (lcr.winnerExists()) {
+            System.out.println("Game over! Winner is " + lcr.getWinner().getName());
         } else {
             render(lcr);
             System.out.println("Game aborted");
-        }*/
+        }
     }
 
-    /*  TODO
-    private ... buildLCRGame() {
-        //return ...
+    private static Game buildLCRGame(String[] names) {
+        Player[] players = new Player[names.length];
+        for(int i = 0; i < names.length; i++){
+            players[i] = new Player(names[i]);
+        }
+        Dice dice = new Dice();
+        Game newGame = new Game(players, dice);
+        return newGame;
     }
-    */
 
-    /* TODO
-    private void render( ... ) {
-        // This needs overridden toString method to work!
+
+    private void render( Game lcr ) {
+        //Prints out the result of the rolled dices as a String array
         for (String s : lcr.getResult()) {
             System.out.print(s + "  ");
         }
         System.out.println();
-        for (Player p : lcr.getPlayers()) {
-            System.out.print(p + " ");
+
+        //Prints out the name of the player and how many tiles they have.
+        for (Player player : lcr.getPlayers()) {
+            System.out.print(player.toString() + " ");
         }
         System.out.println();
-    }*/
+    }
 
 }

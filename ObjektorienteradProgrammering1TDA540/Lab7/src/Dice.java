@@ -1,18 +1,17 @@
 import java.util.Random;
 
 public class Dice {
-    private Character[] sides = {'L', 'C', 'R', '.', '.', '.'};
+    private final Character[] SIDES = {'L', 'C', 'R', '.', '.', '.'};
     private Character lastRoll;
+    private Random rand;
 
-    public Character roll(){
-        Random rand = new Random();
-        Character result = sides[rand.nextInt(6)];
-        lastRoll = result;
-        return result;
+    public void roll(){
+        rand = new Random();
+        lastRoll = SIDES[rand.nextInt(6)];
     }
 
-    @Override
-    public String toString(){
-        return getClass().getSimpleName() + "{" + "lastRoll=" + lastRoll + "}";
+    public Character getLastRoll(){
+        return lastRoll;
     }
+
 }
