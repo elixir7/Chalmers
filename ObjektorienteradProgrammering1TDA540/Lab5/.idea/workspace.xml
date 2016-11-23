@@ -25,16 +25,16 @@
       <file leaf-file-name="Lab5_skel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Lab5_skel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="202" column="0" selection-start-line="202" selection-start-column="0" selection-end-line="202" selection-end-column="0" />
+            <state relative-caret-position="239">
+              <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="66" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#doCollatz#0;class#Lab5_skel#0" expanded="false" />
-                <element signature="method#doCommandLine#0;class#Lab5_skel#0" expanded="false" />
                 <element signature="method#toRobber#0;class#Lab5_skel#0" expanded="false" />
                 <element signature="method#isConsonant#0;class#Lab5_skel#0" expanded="false" />
                 <element signature="method#toPigLatin#0;class#Lab5_skel#0" expanded="false" />
                 <element signature="method#isVowel#0;class#Lab5_skel#0" expanded="false" />
+                <element signature="method#doMi2Mu#0;class#Lab5_skel#0" expanded="false" />
                 <element signature="method#muChecker#0;class#Lab5_skel#0" expanded="false" />
                 <element signature="method#rule1#0;class#Lab5_skel#0" expanded="false" />
                 <element signature="method#rule2#0;class#Lab5_skel#0" expanded="false" />
@@ -635,20 +635,20 @@
       <workItem from="1478182085523" duration="18304000" />
       <workItem from="1478611514864" duration="1976000" />
       <workItem from="1478688686853" duration="6582000" />
-      <workItem from="1479137451347" duration="1233000" />
+      <workItem from="1479137451347" duration="1383000" />
+      <workItem from="1479221932187" duration="620000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29654000" />
+    <option name="totallyTimeSpent" value="30424000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="711" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="711" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32866043" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -670,6 +670,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32866043" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -687,7 +688,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="23" />
+      <option name="time" value="24" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -703,11 +704,11 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#doCollatz#0;class#Lab5_skel#0" expanded="false" />
-            <element signature="method#doCommandLine#0;class#Lab5_skel#0" expanded="false" />
             <element signature="method#toRobber#0;class#Lab5_skel#0" expanded="false" />
             <element signature="method#isConsonant#0;class#Lab5_skel#0" expanded="false" />
             <element signature="method#toPigLatin#0;class#Lab5_skel#0" expanded="false" />
             <element signature="method#isVowel#0;class#Lab5_skel#0" expanded="false" />
+            <element signature="method#doMi2Mu#0;class#Lab5_skel#0" expanded="false" />
             <element signature="method#muChecker#0;class#Lab5_skel#0" expanded="false" />
             <element signature="method#rule1#0;class#Lab5_skel#0" expanded="false" />
             <element signature="method#rule2#0;class#Lab5_skel#0" expanded="false" />
@@ -740,11 +741,11 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#doCollatz#0;class#Lab5_skel#0" expanded="false" />
-            <element signature="method#doCommandLine#0;class#Lab5_skel#0" expanded="false" />
             <element signature="method#toRobber#0;class#Lab5_skel#0" expanded="false" />
             <element signature="method#isConsonant#0;class#Lab5_skel#0" expanded="false" />
             <element signature="method#toPigLatin#0;class#Lab5_skel#0" expanded="false" />
             <element signature="method#isVowel#0;class#Lab5_skel#0" expanded="false" />
+            <element signature="method#doMi2Mu#0;class#Lab5_skel#0" expanded="false" />
             <element signature="method#muChecker#0;class#Lab5_skel#0" expanded="false" />
             <element signature="method#rule1#0;class#Lab5_skel#0" expanded="false" />
             <element signature="method#rule2#0;class#Lab5_skel#0" expanded="false" />
@@ -777,11 +778,48 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#doCollatz#0;class#Lab5_skel#0" expanded="false" />
-            <element signature="method#doCommandLine#0;class#Lab5_skel#0" expanded="false" />
             <element signature="method#toRobber#0;class#Lab5_skel#0" expanded="false" />
             <element signature="method#isConsonant#0;class#Lab5_skel#0" expanded="false" />
             <element signature="method#toPigLatin#0;class#Lab5_skel#0" expanded="false" />
             <element signature="method#isVowel#0;class#Lab5_skel#0" expanded="false" />
+            <element signature="method#doMi2Mu#0;class#Lab5_skel#0" expanded="false" />
+            <element signature="method#muChecker#0;class#Lab5_skel#0" expanded="false" />
+            <element signature="method#rule1#0;class#Lab5_skel#0" expanded="false" />
+            <element signature="method#rule2#0;class#Lab5_skel#0" expanded="false" />
+            <element signature="method#rule3#0;class#Lab5_skel#0" expanded="false" />
+            <element signature="method#rule4#0;class#Lab5_skel#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Uppgifter.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="72" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lab5.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Lab5_skel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#doCollatz#0;class#Lab5_skel#0" expanded="false" />
+            <element signature="method#toRobber#0;class#Lab5_skel#0" expanded="false" />
+            <element signature="method#isConsonant#0;class#Lab5_skel#0" expanded="false" />
+            <element signature="method#toPigLatin#0;class#Lab5_skel#0" expanded="false" />
+            <element signature="method#isVowel#0;class#Lab5_skel#0" expanded="false" />
+            <element signature="method#doMi2Mu#0;class#Lab5_skel#0" expanded="false" />
             <element signature="method#muChecker#0;class#Lab5_skel#0" expanded="false" />
             <element signature="method#rule1#0;class#Lab5_skel#0" expanded="false" />
             <element signature="method#rule2#0;class#Lab5_skel#0" expanded="false" />
@@ -806,11 +844,11 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#doCollatz#0;class#Lab5_skel#0" expanded="false" />
-            <element signature="method#doCommandLine#0;class#Lab5_skel#0" expanded="false" />
             <element signature="method#toRobber#0;class#Lab5_skel#0" expanded="false" />
             <element signature="method#isConsonant#0;class#Lab5_skel#0" expanded="false" />
             <element signature="method#toPigLatin#0;class#Lab5_skel#0" expanded="false" />
             <element signature="method#isVowel#0;class#Lab5_skel#0" expanded="false" />
+            <element signature="method#doMi2Mu#0;class#Lab5_skel#0" expanded="false" />
             <element signature="method#muChecker#0;class#Lab5_skel#0" expanded="false" />
             <element signature="method#rule1#0;class#Lab5_skel#0" expanded="false" />
             <element signature="method#rule2#0;class#Lab5_skel#0" expanded="false" />
@@ -827,11 +865,11 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#doCollatz#0;class#Lab5_skel#0" expanded="false" />
-            <element signature="method#doCommandLine#0;class#Lab5_skel#0" expanded="false" />
             <element signature="method#toRobber#0;class#Lab5_skel#0" expanded="false" />
             <element signature="method#isConsonant#0;class#Lab5_skel#0" expanded="false" />
             <element signature="method#toPigLatin#0;class#Lab5_skel#0" expanded="false" />
             <element signature="method#isVowel#0;class#Lab5_skel#0" expanded="false" />
+            <element signature="method#doMi2Mu#0;class#Lab5_skel#0" expanded="false" />
             <element signature="method#muChecker#0;class#Lab5_skel#0" expanded="false" />
             <element signature="method#rule1#0;class#Lab5_skel#0" expanded="false" />
             <element signature="method#rule2#0;class#Lab5_skel#0" expanded="false" />
@@ -866,16 +904,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Lab5_skel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="202" column="0" selection-start-line="202" selection-start-column="0" selection-end-line="202" selection-end-column="0" />
+        <state relative-caret-position="239">
+          <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="66" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#doCollatz#0;class#Lab5_skel#0" expanded="false" />
-            <element signature="method#doCommandLine#0;class#Lab5_skel#0" expanded="false" />
             <element signature="method#toRobber#0;class#Lab5_skel#0" expanded="false" />
             <element signature="method#isConsonant#0;class#Lab5_skel#0" expanded="false" />
             <element signature="method#toPigLatin#0;class#Lab5_skel#0" expanded="false" />
             <element signature="method#isVowel#0;class#Lab5_skel#0" expanded="false" />
+            <element signature="method#doMi2Mu#0;class#Lab5_skel#0" expanded="false" />
             <element signature="method#muChecker#0;class#Lab5_skel#0" expanded="false" />
             <element signature="method#rule1#0;class#Lab5_skel#0" expanded="false" />
             <element signature="method#rule2#0;class#Lab5_skel#0" expanded="false" />
