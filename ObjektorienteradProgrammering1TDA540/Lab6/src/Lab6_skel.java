@@ -10,7 +10,7 @@ public class Lab6_skel {
         //letTwoPlayersRollSameDice();
         //letPlayerUseDiceCup();
         //findPlayerWithMax();
-        coinFlipGame();
+        //coinFlipGame();
     }
 
     // ---------  1  ------------------------

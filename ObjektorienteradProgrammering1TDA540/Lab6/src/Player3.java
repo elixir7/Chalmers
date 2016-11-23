@@ -29,6 +29,7 @@ public class Player3 {
         }
     }
 
+
     public void addPoint(){
         points++;
     }
