@@ -12,37 +12,42 @@ void setup() {
  pingServo.write(1);
  delay(2000);
 }
+
 void loop() {
- for(int i = 15; i <= 165; i++){
+ for(int i = 1; i <= 180; i = i + 2){
   printData(i);
  }
 
- for(int i = 165; i > 15; i--){
+ for(int i = 180; i >= 1; i = i - 2){
   printData(i);
  }
 }
 
 void printData(int i){
   pingServo.write(i);
-  delay(30);
+
   distance = calculateDistance();
   
   Serial.print(i);
-  Serial.print(",");
+  Serial.print("deg : ");
   Serial.print(distance);
-  Serial.print(".");
+  Serial.print("cm.");
+  Serial.println();
 }
 
 int calculateDistance(){
   pinMode(pingPin, OUTPUT); // Set pin to OUTPUT
   digitalWrite(pingPin, LOW); // Ensure pin is low
   delayMicroseconds(2);
+  
   digitalWrite(pingPin, HIGH); // Start ranging
   delayMicroseconds(5); // with 5 microsecond burst
   digitalWrite(pingPin, LOW); // End ranging
+  
   pinMode(pingPin, INPUT); // Set pin to INPUT
   duration = pulseIn(pingPin, HIGH); // Read echo pulse
-  distance = duration * 0.034/2;
+  distance = duration * 0.034/2;  //Convert to centimeters
+  
   return distance;
 }
 
