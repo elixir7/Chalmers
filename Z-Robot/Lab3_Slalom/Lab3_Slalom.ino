@@ -7,6 +7,7 @@ Servo pingServo;
 const int pingPin = 13;
 long duration;
 int distance;
+int rightDistance;
 
 void setup() {
  Serial.begin(9600);
@@ -14,21 +15,24 @@ void setup() {
  servoLeft.attach(11);
  servoRight.attach(10);
 
+ //Center pingServo
  pingServo.write(90);
  delay(1000);
 }
 
 void loop() {
+  
   forward();
   delay(75);
+  
   distance = calculateDistance();
   Serial.print("Distance Forward: ");
   Serial.print(distance);
   Serial.println();
-  
+
   if(distance < 6){
     stopOnSpot();
-    int rightDistance =  rightDist();
+    rightDistance =  rightDist();
     Serial.print("Right Distance: ");
     Serial.print(rightDistance);
     Serial.println();
@@ -89,69 +93,3 @@ void maneuver(int speedLeft, int speedRight){
   servoLeft.writeMicroseconds(speedLeft);
   servoRight.writeMicroseconds(speedRight);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-void printCompare(){
-  Serial.print("Left: ");
- Serial.print(sumLeft);
- Serial.print(", Right: ");
- Serial.print(sumRight);
- Serial.println();
-}
-*/
-/*
- * Maneuver(left, right)
- * Left faster = 1500+
- * Right Faster = 1500-
- */
-
-/*
-void move(){
-  double r = (sumLeft / sumRight);
-  double v;
-  //More space to the left, turn left
-  if(r > 1){
-    v = (1/r) * 200;
-    maneuver(1500 - v, 1300);
-  }else if(r > 4){
-    v = (1/(r/2)) * 200;
-    maneuver(1500 - v, 1300);
-  }
-  //Turn Right
-  else if(r < 1){
-    v = r * 200;
-    maneuver(1700, 1500 + v);
-  } 
-}
-*/
-/*
-void evaluate(){
-  sumLeft = 0;
-  sumRight = 0;
-  for(int i = 1; i <= 180; i = i + 2){
-    if(i <= 90){
-      sumRight = sumRight + sweepArr[i];
-    }else{
-      sumLeft = sumLeft + sweepArr[i];
-    } 
-  }
-  
-}
-*/
-
