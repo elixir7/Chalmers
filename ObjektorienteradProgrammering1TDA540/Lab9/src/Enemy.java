@@ -5,7 +5,9 @@ public class Enemy {
     public void decreaseHP(int damage){
         HP = HP - damage;
     }
-
+    public int getHP(){
+        return HP;
+    }
     public String getIconPath(){
         return iconPath;
     }
