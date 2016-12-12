@@ -60,6 +60,7 @@ public class Game {
                 winningPlayerList.add(player);
             }
         }
+        System.out.println("size: " + Integer.toString(winningPlayerList.size()));
         if(winningPlayerList.size() == 1){
             //The Arraylist only has 1 spot which means only 1 player has tiles = we have a winner
             winner = winningPlayerList.get(0);

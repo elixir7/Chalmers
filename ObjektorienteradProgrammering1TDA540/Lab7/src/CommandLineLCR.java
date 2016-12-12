@@ -56,7 +56,6 @@ public class CommandLineLCR {
         if (lcr.winnerExists()) {
             System.out.println("Game over! Winner is " + lcr.getWinner().getName());
         } else {
-            render(lcr);
             System.out.println("Game aborted");
         }
     }
