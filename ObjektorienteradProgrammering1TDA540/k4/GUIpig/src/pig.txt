@@ -1,0 +1,16 @@
+*** Gris ****
+
+Spelet Gris går ut på att ett antal spelare i tur och ordning kastar
+en tärning. Den som först når 100 poäng vinner.
+Din uppgift är att skapa en kommandoradsbaserad datorversion av Gris. 
+
+I varje runda kastar en spelare tärningen
+
+    - Om resultatet är större än 1 adderas det till en **summa för rundan**.
+    -- Spelaren kan sedan välja att kasta igen eller avbryta och låta nästa spelare kasta.
+    -- Om spelaren avbryter addera **summan för rundan** till spelarens totalsumma 
+       och totalsumman >= 100 avslutas spelet med spelaren som vinnare. 
+
+    - Om resultatet blir 1 sätts **summan för rundan** till 0
+    och det blir nästa spelares tur (d.v.s. spelaren fick inga poäng för denna runda)
+
