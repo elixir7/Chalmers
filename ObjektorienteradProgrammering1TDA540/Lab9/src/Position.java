@@ -1,6 +1,4 @@
-/**
- * Created by hajo
- */
+
 public class Position {
     private int x;
     private int y;
@@ -15,14 +13,6 @@ public class Position {
     }
     public int getY(){
         return y;
-    }
-
-
-    public void setX(int val){
-        x = val;
-    }
-    public void setY(int val){
-        y = val;
     }
 
 

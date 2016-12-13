@@ -7,22 +7,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.URL;
 import java.util.*;
-import java.util.List;
 
-/*
-Current problem:
-getLandScapePanel() returns a static panel
-the positionPanels hashmap is not used to control the panels, it just references them.
- */
 public class GUITowerDefence extends JFrame implements ActionListener {
 
     private final Map<Position, JPanel> positionsPanels = new HashMap<>();
-    private final MonsterPanel monsterPanel = new MonsterPanel();
     private final Timer timer;
     private static final int SPEED = 1000;
     private static final int PAUSE = 1000;
     private Game game;
-
+    private int cnt = 1;
 
     public static void main(String[] args) {
         new GUITowerDefence("Tower Defence").setVisible(true);
@@ -36,39 +29,69 @@ public class GUITowerDefence extends JFrame implements ActionListener {
         this.setLayout(new BorderLayout());
         this.setResizable(false);
         this.add(getLandscapePanel(), BorderLayout.CENTER);
-        this.setSize(600, 450);
+        this.setSize(900, 700);
 
         timer = new Timer(SPEED, this);
         timer.setInitialDelay(PAUSE);
-        // Will generate ActionEvents
         timer.start();
     }
 
-    // ---------- Event handling --------------------
-
+    //Invarians: Ser till att spelet inte körs om monstret är död eller påväg att gå utanför mapen
+    //Runs all rendering and updating the GUI after each tick in the timer
     @Override
     public void actionPerformed(ActionEvent e) {
+        for (int i = 0; i < game.getEnemyPath().length; i++) {
+            if(cnt == game.getEnemyPath()[i]) {
+                Position monsterPos = game.getMap()[i];
+                game.getEnemy().setPos(monsterPos);
+                for(int k = 0; k < game.getTowers().length; k++){
+                    for(int h = 0; h < game.getTowers()[k].getFireRate(); h++){
+                        if(game.getTowers()[k].canHit(game.getEnemy())){
+                            if(game.getTowers()[k].didHit()){
+                                game.getEnemy().decreaseHP(game.getTowers()[k].getDamage());
+                            }
+                        }
+                    }
+                }
+                setMonsterPanel(positionsPanels.get(game.getMap()[i]));
+            }else if(cnt - 1 == game.getEnemyPath()[i] && cnt - 1 != 0){
+                setDefaultPanel(positionsPanels.get(game.getMap()[i]));
+            }
+        }
+        revalidate();
+        repaint();
 
-
+        cnt++;
+        if(game.getEnemy().isDead()){
+            timer.stop();
+            JOptionPane.showMessageDialog(null, "You won!");
+            this.dispose();
+            this.setVisible(false);
+        }else if(cnt > game.getEndInt()) {
+            timer.stop();
+            JOptionPane.showMessageDialog(null, "Enemy won!");
+            this.dispose();
+            this.setVisible(false);
+        }
     }
 
-    // ---------- Render (if actionPerformed to large) ---------------
 
-
-    // ---------- Build model ----------
+    //Builds top level object
     private Game buildTowerDefence() {
+        //Tower 1 and 2 is suppose to be used with Map1 (in Game.java)
+        //Tower 3 and 4 is suppose to be used with Map2 (in Game.java)
         Tower tower1 = new Tower(new Position(3, 3));
         Tower tower2 = new Tower(new Position(5, 3));
-        Tower[] towers = {tower1, tower2};
+        Tower[] towers1 = {tower1, tower2};
+        //Tower tower3 = new Tower(new Position(2, 1));
+        //Tower tower4 = new Tower(new Position(2, 3));
+        //Tower[] towers2 = {tower3, tower4};
         Enemy enemy = new Enemy();
-        return new Game(enemy, towers);
+        return new Game(enemy, towers1);
     }
 
-
-    // ----------- Build GUI ---------------------
-
+    //Returns the initial renderd panel
     private JPanel getLandscapePanel() {
-        //Return a Panel with many panels
         JPanel mainPanel = new JPanel(new BorderLayout());
         mainPanel.setLayout(new GridLayout(6, 8));
 
@@ -82,12 +105,15 @@ public class GUITowerDefence extends JFrame implements ActionListener {
 
                 JPanel tempPanel = new JPanel();
                 JLabel tempLabel = new JLabel();
+                tempLabel.setLayout(new BorderLayout());
                 tempPanel.setBorder(BorderFactory.createLineBorder(Color.black));
                 tempPanel.setOpaque(true);
 
-                if(game.getEnemyPath()[counter] != 1){
+                //If the panel isn't the enemy path, make it green
+                if(game.getEnemyPath()[counter] == 0){
                     tempPanel.setBackground(Color.GREEN);
                 }
+                // Loop through towers and position them on the main panel.
                 for(int u = 0; u < game.getTowers().length; u++){
                     Position tempMapPos = game.getMap()[counter];
                     Position tempTowerPos = game.getTowers()[u].getPosition();
@@ -104,12 +130,10 @@ public class GUITowerDefence extends JFrame implements ActionListener {
                 counter++;
             }
         }
-        positionsPanels.put(new Position(0, 4), getMonsterPanel());
-
         return mainPanel;
     }
 
-    // Given a file name returns a label with an icon
+    // Given a file name returns a JLabel with an icon
     private JLabel getIconLabel(String fileName) {
         URL url = this.getClass().getResource(fileName);
         ImageIcon ii = new ImageIcon(url);
@@ -117,40 +141,16 @@ public class GUITowerDefence extends JFrame implements ActionListener {
         return lbl;
     }
 
-
-    //Monster Panel
-    private JPanel getMonsterPanel(){
-        JPanel monsterPanel = new JPanel();
+    //Transforms a panel to a Monster Panel
+    private void setMonsterPanel(JPanel norPanel){
         JLabel health = new JLabel(Integer.toString(game.getEnemy().getHP()));
         JLabel icon = getIconLabel(game.getEnemy().getIconPath());
-        monsterPanel.add(icon);
-        monsterPanel.add(health);
-        return monsterPanel;
+        norPanel.add(icon, BorderLayout.NORTH);
+        norPanel.add(health, BorderLayout.SOUTH);
     }
 
-    // -------------- Inner class ------------------
-    // Use if you like
-    private class MonsterPanel extends JPanel {
-
-        private JLabel monster;
-        private JLabel health = new JLabel();
-
-        public MonsterPanel() {
-            this.setBackground(Color.WHITE);
-            this.setLayout(new BorderLayout());
-            this.monster = getIconLabel("icons/monster10.gif");
-            health.setFont(new Font("Serif", Font.BOLD, 10));
-            this.add(monster, BorderLayout.CENTER);
-            this.add(health, BorderLayout.SOUTH);
-        }
-
-        public JPanel getMonsterPanel(){
-            return this;
-        }
-
-        public void setHealth(int health) {
-            this.health.setText(String.valueOf(health));
-        }
+    //Transforms a panel to a plain panel
+    private void setDefaultPanel(JPanel norPanel){
+        norPanel.removeAll();
     }
-
 }
