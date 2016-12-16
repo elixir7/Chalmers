@@ -8,19 +8,15 @@ import java.awt.event.ActionListener;
 import java.net.URL;
 import java.util.*;
 
-/*
-
-    Gör funktion typ "checkGameStatus()" för att de är nice med metoder i actionPerformed
-    Dela upp getLandscapePanel i mer metoder för att lättare se!
-
- */
-public class GUITowerDefence extends JFrame implements ActionListener {
+public class GUITowerDefence extends JFrame implements ActionListener, GUI {
 
     private final Map<Position, JPanel> positionsPanels = new HashMap<>();
     private final Timer timer;
     private static final int SPEED = 1000;
     private static final int PAUSE = 1000;
     private Game game;
+    private String towerIconPath = "icons/tower-icon.png";
+    private String enemyIconPath = "icons/monster10.gif";
 
 
     public static void main(String[] args) {
@@ -42,13 +38,16 @@ public class GUITowerDefence extends JFrame implements ActionListener {
         timer.start();
     }
 
-    //Invarians: Ser till att spelet inte körs om monstret är död eller påväg att gå utanför mapen
+    //Invariance: Makes sure that the game doesn't run if the enemy is dead or is about to leave the map.
     //Runs all rendering and updating the GUI after each tick in the timer
     @Override
     public void actionPerformed(ActionEvent e) {
+        //Run a game turn, a.k.a a tick/frame
         game.run();
 
+        //Update monster on the screen
         setMonsterPanel(positionsPanels.get(game.getMonsterPos()));
+        //If the monster has moved, transform the old panel with a monster to a normal one.
         if(game.monsterHasMoved()){
             setDefaultPanel(positionsPanels.get(game.getLastMonsterPos()));
         }
@@ -56,6 +55,11 @@ public class GUITowerDefence extends JFrame implements ActionListener {
         revalidate();
         repaint();
 
+        checkGameStatus();
+    }
+
+    @Override
+    public void checkGameStatus(){
         if(game.getEnemy().isDead()){
             timer.stop();
             JOptionPane.showMessageDialog(null, "You won!");
@@ -69,9 +73,9 @@ public class GUITowerDefence extends JFrame implements ActionListener {
         }
     }
 
-
     //Builds top level object
-    private Game buildTowerDefence() {
+    @Override
+    public Game buildTowerDefence() {
         //Tower 1 and 2 is suppose to be used with Map1 (in Game.java)
         //Tower 3 and 4 is suppose to be used with Map2 (in Game.java)
         Tower tower1 = new Tower(new Position(3, 3));
@@ -85,7 +89,8 @@ public class GUITowerDefence extends JFrame implements ActionListener {
     }
 
     //Returns the initial renderd panel
-    private JPanel getLandscapePanel() {
+    @Override
+    public JPanel getLandscapePanel() {
         JPanel mainPanel = new JPanel(new BorderLayout());
         mainPanel.setLayout(new GridLayout(6, 8));
 
@@ -108,15 +113,17 @@ public class GUITowerDefence extends JFrame implements ActionListener {
                     tempPanel.setBackground(Color.GREEN);
                 }
                 // Loop through towers and position them on the main panel.
-                for(int u = 0; u < game.getTowers().length; u++){
+                for(Tower tower : game.getTowers()){
                     Position tempMapPos = game.getMap()[counter];
-                    Position tempTowerPos = game.getTowers()[u].getPosition();
+                    Position tempTowerPos = tower.getPosition();
 
                     if( tempMapPos.getX() == tempTowerPos.getX() && tempMapPos.getY() == tempTowerPos.getY() ){
-                        tempLabel = getIconLabel(game.getTowers()[u].getIconPath());
+                        tempLabel = getIconLabel(towerIconPath);
                     }
                 }
+                //Add Label to Panel
                 tempPanel.add(tempLabel);
+                //Add the created panel to the panel containing all panels
                 mainPanel.add(tempPanel);
 
                 //Connect Panels with a position in the Map
@@ -128,7 +135,8 @@ public class GUITowerDefence extends JFrame implements ActionListener {
     }
 
     // Given a file name returns a JLabel with an icon
-    private JLabel getIconLabel(String fileName) {
+    @Override
+    public JLabel getIconLabel(String fileName) {
         URL url = this.getClass().getResource(fileName);
         ImageIcon ii = new ImageIcon(url);
         JLabel lbl = new JLabel(ii);
@@ -136,15 +144,17 @@ public class GUITowerDefence extends JFrame implements ActionListener {
     }
 
     //Transforms a panel to a Monster Panel
-    private void setMonsterPanel(JPanel norPanel){
+    @Override
+    public void setMonsterPanel(JPanel norPanel){
         JLabel health = new JLabel(Integer.toString(game.getEnemy().getHitPoints()));
-        JLabel icon = getIconLabel(game.getEnemy().getIconPath());
+        JLabel icon = getIconLabel(enemyIconPath);
         norPanel.add(icon, BorderLayout.NORTH);
         norPanel.add(health, BorderLayout.SOUTH);
     }
 
     //Transforms a panel to a plain panel
-    private void setDefaultPanel(JPanel panel){
+    @Override
+    public void setDefaultPanel(JPanel panel){
         panel.removeAll();
     }
 }

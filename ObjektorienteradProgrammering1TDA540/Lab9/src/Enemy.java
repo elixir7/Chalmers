@@ -1,6 +1,5 @@
 public class Enemy {
     private int hitPoints = 15;
-    private String iconPath = "icons/monster10.gif";
     private Position pos;
 
     //Invariant: Ser till att Monstrets HP aldrig är mindre än noll.
@@ -12,9 +11,6 @@ public class Enemy {
     }
     public int getHitPoints(){
         return hitPoints;
-    }
-    public String getIconPath(){
-        return iconPath;
     }
     public Position getPos(){
         return pos;

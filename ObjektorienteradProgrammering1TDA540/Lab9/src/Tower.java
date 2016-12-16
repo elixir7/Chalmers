@@ -4,7 +4,6 @@ public class Tower {
     private int fireRate = 2;
     private int range = 1;
     private int damage = 1;
-    private String iconPath = "icons/tower-icon.png";
     private Random rand = new Random();
     private Position pos;
 
@@ -41,9 +40,6 @@ public class Tower {
 
     public Position getPosition(){
         return pos;
-    }
-    public String getIconPath(){
-        return iconPath;
     }
 
 }

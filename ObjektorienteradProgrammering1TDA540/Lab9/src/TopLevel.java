@@ -1,8 +1,10 @@
 public interface TopLevel {
 
+    void run();
+    void shootMonster();
+
     boolean enemyWon();
     boolean monsterHasMoved();
-    void shootMonster();
 
     Position getMonsterPos();
     Position getLastMonsterPos();

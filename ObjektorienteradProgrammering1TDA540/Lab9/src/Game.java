@@ -2,6 +2,11 @@ public class Game implements TopLevel{
     //Each game contains 2 towers
     private Tower[] towers = new Tower[2];
     private Enemy enemy;
+    //The last number on the map, used to determine if the monster has won.
+    private int endInt;
+    private int cnt = 1;
+    private Position monsterPos;
+    private Position lastMonsterPos;
     // 6 x 8 Position map
     private Position[] map = new Position[48];
     private Integer[] map1 =  { 0,0,0,0,0,0 ,15,0,
@@ -19,13 +24,6 @@ public class Game implements TopLevel{
                                 0,0,0,0,0,0,0,0 };
     private Integer[] enemyPath;
 
-    //The last number on the map, used to determine if the monster has won.
-    private int endInt;
-
-    private int cnt = 1;
-    private Position monsterPos;
-    private Position lastMonsterPos;
-
 
     public Game(Enemy enemy, Tower[] towers){
         this.enemy = enemy;
@@ -40,7 +38,7 @@ public class Game implements TopLevel{
         }
     }
 
-
+    @Override
     public void run(){
         for (int i = 0; i < enemyPath.length; i++) {
             if(cnt ==  enemyPath[i]) {
@@ -49,7 +47,7 @@ public class Game implements TopLevel{
                 shootMonster();
             }else if(cnt - 1 != 0 && cnt - 1 == enemyPath[i]){
                 //Check if we are on the last position of the monster
-                //Invariance: Makes sure the monsters last position isn't outsid of the map
+                //Invariance: Makes sure the monsters last position isn't outside of the map
                 lastMonsterPos = map[i];
             }
         }

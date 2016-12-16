@@ -21,90 +21,7 @@
     <favorites_list name="towerdefence" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GUITowerDefence.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUITowerDefence.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-71">
-              <caret line="13" column="64" selection-start-line="13" selection-start-column="64" selection-end-line="13" selection-end-column="64" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#GUITowerDefence#0;class#GUITowerDefence#0" expanded="false" />
-                <element signature="method#actionPerformed#0;class#GUITowerDefence#0" expanded="false" />
-                <element signature="method#buildTowerDefence#0;class#GUITowerDefence#0" expanded="false" />
-                <element signature="method#getIconLabel#0;class#GUITowerDefence#0" expanded="false" />
-                <element signature="e#5251#5252#0" expanded="true" />
-                <element signature="e#5284#5285#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Game.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="79" column="4" selection-start-line="79" selection-start-column="4" selection-end-line="79" selection-end-column="4" />
-              <folding>
-                <element signature="method#Game#0;class#Game#0" expanded="false" />
-                <element signature="method#shootMonster#0;class#Game#0" expanded="false" />
-                <element signature="e#2864#2865#0" expanded="true" />
-                <element signature="e#2896#2897#0" expanded="true" />
-                <element signature="e#2943#2944#0" expanded="true" />
-                <element signature="e#2969#2970#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Position.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Position.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Enemy.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Enemy.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="30" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
-              <folding>
-                <element signature="e#571#572#0" expanded="true" />
-                <element signature="e#601#602#0" expanded="true" />
-                <element signature="e#630#631#0" expanded="true" />
-                <element signature="e#667#668#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Tower.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Tower.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
-              <folding>
-                <element signature="method#didHit#0;class#Tower#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TopLevel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/TopLevel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -130,11 +47,12 @@
         <option value="$PROJECT_DIR$/src/GUI.form" />
         <option value="$PROJECT_DIR$/src/Rancor.java" />
         <option value="$PROJECT_DIR$/src/Position.java" />
-        <option value="$PROJECT_DIR$/src/Tower.java" />
-        <option value="$PROJECT_DIR$/src/Game.java" />
-        <option value="$PROJECT_DIR$/src/TopLevel.java" />
-        <option value="$PROJECT_DIR$/src/GUITowerDefence.java" />
         <option value="$PROJECT_DIR$/src/Enemy.java" />
+        <option value="$PROJECT_DIR$/src/Tower.java" />
+        <option value="$PROJECT_DIR$/src/TopLevel.java" />
+        <option value="$PROJECT_DIR$/src/Game.java" />
+        <option value="$PROJECT_DIR$/src/GUI.java" />
+        <option value="$PROJECT_DIR$/src/GUITowerDefence.java" />
       </list>
     </option>
   </component>
@@ -723,16 +641,16 @@
       <workItem from="1481529511547" duration="12316000" />
       <workItem from="1481634380256" duration="1937000" />
       <workItem from="1481637706620" duration="2417000" />
-      <workItem from="1481880478160" duration="4049000" />
+      <workItem from="1481880478160" duration="6713000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34725000" />
+    <option name="totallyTimeSpent" value="37389000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="711" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -742,11 +660,11 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32866043" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20560747" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20560747" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24375" sideWeight="0.48753893" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24375" sideWeight="0.48753893" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.246875" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -776,7 +694,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="9" />
+      <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -799,11 +717,12 @@
           <caret line="51" column="5" selection-start-line="37" selection-start-column="4" selection-end-line="51" selection-end-column="5" />
           <folding>
             <element signature="method#Game#0;class#Game#0" expanded="false" />
+            <element signature="method#run#0;class#Game#0" expanded="false" />
             <element signature="method#shootMonster#0;class#Game#0" expanded="false" />
-            <element signature="e#2864#2865#0" expanded="true" />
-            <element signature="e#2896#2897#0" expanded="true" />
-            <element signature="e#2943#2944#0" expanded="true" />
-            <element signature="e#2969#2970#0" expanded="true" />
+            <element signature="e#2876#2877#0" expanded="true" />
+            <element signature="e#2908#2909#0" expanded="true" />
+            <element signature="e#2955#2956#0" expanded="true" />
+            <element signature="e#2981#2982#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -821,10 +740,10 @@
         <state relative-caret-position="225">
           <caret line="22" column="16" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="16" />
           <folding>
-            <element signature="e#571#572#0" expanded="true" />
-            <element signature="e#601#602#0" expanded="true" />
-            <element signature="e#630#631#0" expanded="true" />
-            <element signature="e#667#668#0" expanded="true" />
+            <element signature="e#454#455#0" expanded="true" />
+            <element signature="e#484#485#0" expanded="true" />
+            <element signature="e#513#514#0" expanded="true" />
+            <element signature="e#550#551#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -837,10 +756,13 @@
             <element signature="imports" expanded="true" />
             <element signature="method#GUITowerDefence#0;class#GUITowerDefence#0" expanded="false" />
             <element signature="method#actionPerformed#0;class#GUITowerDefence#0" expanded="false" />
+            <element signature="method#checkGameStatus#0;class#GUITowerDefence#0" expanded="false" />
             <element signature="method#buildTowerDefence#0;class#GUITowerDefence#0" expanded="false" />
+            <element signature="method#getLandscapePanel#0;class#GUITowerDefence#0" expanded="false" />
             <element signature="method#getIconLabel#0;class#GUITowerDefence#0" expanded="false" />
-            <element signature="e#5251#5252#0" expanded="true" />
-            <element signature="e#5284#5285#0" expanded="true" />
+            <element signature="method#setMonsterPanel#0;class#GUITowerDefence#0" expanded="false" />
+            <element signature="e#5589#5590#0" expanded="true" />
+            <element signature="e#5622#5623#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -877,11 +799,12 @@
           <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
           <folding>
             <element signature="method#Game#0;class#Game#0" expanded="false" />
+            <element signature="method#run#0;class#Game#0" expanded="false" />
             <element signature="method#shootMonster#0;class#Game#0" expanded="false" />
-            <element signature="e#2864#2865#0" expanded="true" />
-            <element signature="e#2896#2897#0" expanded="true" />
-            <element signature="e#2943#2944#0" expanded="true" />
-            <element signature="e#2969#2970#0" expanded="true" />
+            <element signature="e#2876#2877#0" expanded="true" />
+            <element signature="e#2908#2909#0" expanded="true" />
+            <element signature="e#2955#2956#0" expanded="true" />
+            <element signature="e#2981#2982#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -891,10 +814,10 @@
         <state relative-caret-position="225">
           <caret line="22" column="16" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="16" />
           <folding>
-            <element signature="e#571#572#0" expanded="true" />
-            <element signature="e#601#602#0" expanded="true" />
-            <element signature="e#630#631#0" expanded="true" />
-            <element signature="e#667#668#0" expanded="true" />
+            <element signature="e#454#455#0" expanded="true" />
+            <element signature="e#484#485#0" expanded="true" />
+            <element signature="e#513#514#0" expanded="true" />
+            <element signature="e#550#551#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -907,10 +830,13 @@
             <element signature="imports" expanded="true" />
             <element signature="method#GUITowerDefence#0;class#GUITowerDefence#0" expanded="false" />
             <element signature="method#actionPerformed#0;class#GUITowerDefence#0" expanded="false" />
+            <element signature="method#checkGameStatus#0;class#GUITowerDefence#0" expanded="false" />
             <element signature="method#buildTowerDefence#0;class#GUITowerDefence#0" expanded="false" />
+            <element signature="method#getLandscapePanel#0;class#GUITowerDefence#0" expanded="false" />
             <element signature="method#getIconLabel#0;class#GUITowerDefence#0" expanded="false" />
-            <element signature="e#5251#5252#0" expanded="true" />
-            <element signature="e#5284#5285#0" expanded="true" />
+            <element signature="method#setMonsterPanel#0;class#GUITowerDefence#0" expanded="false" />
+            <element signature="e#5589#5590#0" expanded="true" />
+            <element signature="e#5622#5623#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -923,10 +849,13 @@
             <element signature="imports" expanded="true" />
             <element signature="method#GUITowerDefence#0;class#GUITowerDefence#0" expanded="false" />
             <element signature="method#actionPerformed#0;class#GUITowerDefence#0" expanded="false" />
+            <element signature="method#checkGameStatus#0;class#GUITowerDefence#0" expanded="false" />
             <element signature="method#buildTowerDefence#0;class#GUITowerDefence#0" expanded="false" />
+            <element signature="method#getLandscapePanel#0;class#GUITowerDefence#0" expanded="false" />
             <element signature="method#getIconLabel#0;class#GUITowerDefence#0" expanded="false" />
-            <element signature="e#5251#5252#0" expanded="true" />
-            <element signature="e#5284#5285#0" expanded="true" />
+            <element signature="method#setMonsterPanel#0;class#GUITowerDefence#0" expanded="false" />
+            <element signature="e#5589#5590#0" expanded="true" />
+            <element signature="e#5622#5623#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -937,11 +866,12 @@
           <caret line="27" column="19" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="19" />
           <folding>
             <element signature="method#Game#0;class#Game#0" expanded="false" />
+            <element signature="method#run#0;class#Game#0" expanded="false" />
             <element signature="method#shootMonster#0;class#Game#0" expanded="false" />
-            <element signature="e#2864#2865#0" expanded="true" />
-            <element signature="e#2896#2897#0" expanded="true" />
-            <element signature="e#2943#2944#0" expanded="true" />
-            <element signature="e#2969#2970#0" expanded="true" />
+            <element signature="e#2876#2877#0" expanded="true" />
+            <element signature="e#2908#2909#0" expanded="true" />
+            <element signature="e#2955#2956#0" expanded="true" />
+            <element signature="e#2981#2982#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -951,10 +881,10 @@
         <state relative-caret-position="60">
           <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
           <folding>
-            <element signature="e#571#572#0" expanded="true" />
-            <element signature="e#601#602#0" expanded="true" />
-            <element signature="e#630#631#0" expanded="true" />
-            <element signature="e#667#668#0" expanded="true" />
+            <element signature="e#454#455#0" expanded="true" />
+            <element signature="e#484#485#0" expanded="true" />
+            <element signature="e#513#514#0" expanded="true" />
+            <element signature="e#550#551#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -997,10 +927,13 @@
             <element signature="imports" expanded="true" />
             <element signature="method#GUITowerDefence#0;class#GUITowerDefence#0" expanded="false" />
             <element signature="method#actionPerformed#0;class#GUITowerDefence#0" expanded="false" />
+            <element signature="method#checkGameStatus#0;class#GUITowerDefence#0" expanded="false" />
             <element signature="method#buildTowerDefence#0;class#GUITowerDefence#0" expanded="false" />
+            <element signature="method#getLandscapePanel#0;class#GUITowerDefence#0" expanded="false" />
             <element signature="method#getIconLabel#0;class#GUITowerDefence#0" expanded="false" />
-            <element signature="e#5251#5252#0" expanded="true" />
-            <element signature="e#5284#5285#0" expanded="true" />
+            <element signature="method#setMonsterPanel#0;class#GUITowerDefence#0" expanded="false" />
+            <element signature="e#5589#5590#0" expanded="true" />
+            <element signature="e#5622#5623#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1041,10 +974,13 @@
             <element signature="imports" expanded="true" />
             <element signature="method#GUITowerDefence#0;class#GUITowerDefence#0" expanded="false" />
             <element signature="method#actionPerformed#0;class#GUITowerDefence#0" expanded="false" />
+            <element signature="method#checkGameStatus#0;class#GUITowerDefence#0" expanded="false" />
             <element signature="method#buildTowerDefence#0;class#GUITowerDefence#0" expanded="false" />
+            <element signature="method#getLandscapePanel#0;class#GUITowerDefence#0" expanded="false" />
             <element signature="method#getIconLabel#0;class#GUITowerDefence#0" expanded="false" />
-            <element signature="e#5251#5252#0" expanded="true" />
-            <element signature="e#5284#5285#0" expanded="true" />
+            <element signature="method#setMonsterPanel#0;class#GUITowerDefence#0" expanded="false" />
+            <element signature="e#5589#5590#0" expanded="true" />
+            <element signature="e#5622#5623#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1065,10 +1001,13 @@
             <element signature="imports" expanded="true" />
             <element signature="method#GUITowerDefence#0;class#GUITowerDefence#0" expanded="false" />
             <element signature="method#actionPerformed#0;class#GUITowerDefence#0" expanded="false" />
+            <element signature="method#checkGameStatus#0;class#GUITowerDefence#0" expanded="false" />
             <element signature="method#buildTowerDefence#0;class#GUITowerDefence#0" expanded="false" />
+            <element signature="method#getLandscapePanel#0;class#GUITowerDefence#0" expanded="false" />
             <element signature="method#getIconLabel#0;class#GUITowerDefence#0" expanded="false" />
-            <element signature="e#5251#5252#0" expanded="true" />
-            <element signature="e#5284#5285#0" expanded="true" />
+            <element signature="method#setMonsterPanel#0;class#GUITowerDefence#0" expanded="false" />
+            <element signature="e#5589#5590#0" expanded="true" />
+            <element signature="e#5622#5623#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1089,10 +1028,13 @@
             <element signature="imports" expanded="true" />
             <element signature="method#GUITowerDefence#0;class#GUITowerDefence#0" expanded="false" />
             <element signature="method#actionPerformed#0;class#GUITowerDefence#0" expanded="false" />
+            <element signature="method#checkGameStatus#0;class#GUITowerDefence#0" expanded="false" />
             <element signature="method#buildTowerDefence#0;class#GUITowerDefence#0" expanded="false" />
+            <element signature="method#getLandscapePanel#0;class#GUITowerDefence#0" expanded="false" />
             <element signature="method#getIconLabel#0;class#GUITowerDefence#0" expanded="false" />
-            <element signature="e#5251#5252#0" expanded="true" />
-            <element signature="e#5284#5285#0" expanded="true" />
+            <element signature="method#setMonsterPanel#0;class#GUITowerDefence#0" expanded="false" />
+            <element signature="e#5589#5590#0" expanded="true" />
+            <element signature="e#5622#5623#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1113,10 +1055,13 @@
             <element signature="imports" expanded="true" />
             <element signature="method#GUITowerDefence#0;class#GUITowerDefence#0" expanded="false" />
             <element signature="method#actionPerformed#0;class#GUITowerDefence#0" expanded="false" />
+            <element signature="method#checkGameStatus#0;class#GUITowerDefence#0" expanded="false" />
             <element signature="method#buildTowerDefence#0;class#GUITowerDefence#0" expanded="false" />
+            <element signature="method#getLandscapePanel#0;class#GUITowerDefence#0" expanded="false" />
             <element signature="method#getIconLabel#0;class#GUITowerDefence#0" expanded="false" />
-            <element signature="e#5251#5252#0" expanded="true" />
-            <element signature="e#5284#5285#0" expanded="true" />
+            <element signature="method#setMonsterPanel#0;class#GUITowerDefence#0" expanded="false" />
+            <element signature="e#5589#5590#0" expanded="true" />
+            <element signature="e#5622#5623#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1127,7 +1072,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI.java" />
     <entry file="file://$PROJECT_DIR$/src/GUI.form" />
     <entry file="file://$PROJECT_DIR$/src/Rancor.java" />
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_73.jdk/Contents/Home/src.zip!/javax/swing/ImageIcon.java">
@@ -1173,34 +1117,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Tower.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+        <state relative-caret-position="405">
+          <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
           <folding>
             <element signature="method#didHit#0;class#Tower#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TopLevel.java">
+    <entry file="file://$PROJECT_DIR$/src/Enemy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUITowerDefence.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-71">
-          <caret line="13" column="64" selection-start-line="13" selection-start-column="64" selection-end-line="13" selection-end-column="64" />
+        <state relative-caret-position="165">
+          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#GUITowerDefence#0;class#GUITowerDefence#0" expanded="false" />
-            <element signature="method#actionPerformed#0;class#GUITowerDefence#0" expanded="false" />
-            <element signature="method#buildTowerDefence#0;class#GUITowerDefence#0" expanded="false" />
-            <element signature="method#getIconLabel#0;class#GUITowerDefence#0" expanded="false" />
-            <element signature="e#5251#5252#0" expanded="true" />
-            <element signature="e#5284#5285#0" expanded="true" />
+            <element signature="e#454#455#0" expanded="true" />
+            <element signature="e#484#485#0" expanded="true" />
+            <element signature="e#513#514#0" expanded="true" />
+            <element signature="e#550#551#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1213,30 +1146,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="21" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="79" column="4" selection-start-line="79" selection-start-column="4" selection-end-line="79" selection-end-column="4" />
+        <state relative-caret-position="-367">
+          <caret line="8" column="36" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
           <folding>
             <element signature="method#Game#0;class#Game#0" expanded="false" />
+            <element signature="method#run#0;class#Game#0" expanded="false" />
             <element signature="method#shootMonster#0;class#Game#0" expanded="false" />
-            <element signature="e#2864#2865#0" expanded="true" />
-            <element signature="e#2896#2897#0" expanded="true" />
-            <element signature="e#2943#2944#0" expanded="true" />
-            <element signature="e#2969#2970#0" expanded="true" />
+            <element signature="e#2876#2877#0" expanded="true" />
+            <element signature="e#2908#2909#0" expanded="true" />
+            <element signature="e#2955#2956#0" expanded="true" />
+            <element signature="e#2981#2982#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Enemy.java">
+    <entry file="file://$PROJECT_DIR$/src/TopLevel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="30" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
+        <state relative-caret-position="30">
+          <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUITowerDefence.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
-            <element signature="e#571#572#0" expanded="true" />
-            <element signature="e#601#602#0" expanded="true" />
-            <element signature="e#630#631#0" expanded="true" />
-            <element signature="e#667#668#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="method#GUITowerDefence#0;class#GUITowerDefence#0" expanded="false" />
+            <element signature="method#actionPerformed#0;class#GUITowerDefence#0" expanded="false" />
+            <element signature="method#checkGameStatus#0;class#GUITowerDefence#0" expanded="false" />
+            <element signature="method#buildTowerDefence#0;class#GUITowerDefence#0" expanded="false" />
+            <element signature="method#getLandscapePanel#0;class#GUITowerDefence#0" expanded="false" />
+            <element signature="method#getIconLabel#0;class#GUITowerDefence#0" expanded="false" />
+            <element signature="method#setMonsterPanel#0;class#GUITowerDefence#0" expanded="false" />
+            <element signature="e#5589#5590#0" expanded="true" />
+            <element signature="e#5622#5623#0" expanded="true" />
           </folding>
         </state>
       </provider>
