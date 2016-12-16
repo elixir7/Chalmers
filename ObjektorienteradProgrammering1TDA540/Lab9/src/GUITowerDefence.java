@@ -8,6 +8,12 @@ import java.awt.event.ActionListener;
 import java.net.URL;
 import java.util.*;
 
+/*
+
+    Gör funktion typ "checkGameStatus()" för att de är nice med metoder i actionPerformed
+    Dela upp getLandscapePanel i mer metoder för att lättare se!
+
+ */
 public class GUITowerDefence extends JFrame implements ActionListener {
 
     private final Map<Position, JPanel> positionsPanels = new HashMap<>();
@@ -15,7 +21,7 @@ public class GUITowerDefence extends JFrame implements ActionListener {
     private static final int SPEED = 1000;
     private static final int PAUSE = 1000;
     private Game game;
-    private int cnt = 1;
+
 
     public static void main(String[] args) {
         new GUITowerDefence("Tower Defence").setVisible(true);
@@ -40,34 +46,22 @@ public class GUITowerDefence extends JFrame implements ActionListener {
     //Runs all rendering and updating the GUI after each tick in the timer
     @Override
     public void actionPerformed(ActionEvent e) {
-        for (int i = 0; i < game.getEnemyPath().length; i++) {
-            if(cnt == game.getEnemyPath()[i]) {
-                Position monsterPos = game.getMap()[i];
-                game.getEnemy().setPos(monsterPos);
+        game.run();
 
-                for(Tower tower : game.getTowers()){
-                    for(int k = 0; k < tower.getFireRate(); k++){
-                        if(tower.canHit(game.getEnemy()) && tower.didHit()){
-                            game.getEnemy().decreaseHP(tower.getDamage());
-                        }
-                    }
-
-                }
-                setMonsterPanel(positionsPanels.get(game.getMap()[i]));
-            }else if(cnt - 1 == game.getEnemyPath()[i] && cnt - 1 != 0){
-                setDefaultPanel(positionsPanels.get(game.getMap()[i]));
-            }
+        setMonsterPanel(positionsPanels.get(game.getMonsterPos()));
+        if(game.monsterHasMoved()){
+            setDefaultPanel(positionsPanels.get(game.getLastMonsterPos()));
         }
+
         revalidate();
         repaint();
 
-        cnt++;
         if(game.getEnemy().isDead()){
             timer.stop();
             JOptionPane.showMessageDialog(null, "You won!");
             this.dispose();
             this.setVisible(false);
-        }else if(cnt > game.getEndInt()) {
+        }else if(game.enemyWon()) {
             timer.stop();
             JOptionPane.showMessageDialog(null, "Enemy won!");
             this.dispose();
@@ -150,7 +144,7 @@ public class GUITowerDefence extends JFrame implements ActionListener {
     }
 
     //Transforms a panel to a plain panel
-    private void setDefaultPanel(JPanel norPanel){
-        norPanel.removeAll();
+    private void setDefaultPanel(JPanel panel){
+        panel.removeAll();
     }
 }

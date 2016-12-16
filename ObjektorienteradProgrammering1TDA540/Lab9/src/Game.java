@@ -22,24 +22,70 @@ public class Game implements TopLevel{
     //The last number on the map, used to determine if the monster has won.
     private int endInt;
 
+    private int cnt = 1;
+    private Position monsterPos;
+    private Position lastMonsterPos;
+
 
     public Game(Enemy enemy, Tower[] towers){
         this.enemy = enemy;
         this.towers = towers;
+        //Choose between map1 and map2 to choose map layout.
         this.enemyPath = map1;
         //Finds the highest number according to the game map.
-        for(int i = 0; i < this.enemyPath.length; i++){
-            if(this.enemyPath[i] > this.getEndInt()){
-                this.endInt = this.enemyPath[i];
+        for(int i = 0; i < enemyPath.length; i++){
+            if(enemyPath[i] > endInt){
+                endInt = enemyPath[i];
             }
         }
     }
 
 
     public void run(){
-
+        for (int i = 0; i < enemyPath.length; i++) {
+            if(cnt ==  enemyPath[i]) {
+                monsterPos = map[i];
+                enemy.setPos(monsterPos);
+                shootMonster();
+            }else if(cnt - 1 != 0 && cnt - 1 == enemyPath[i]){
+                //Check if we are on the last position of the monster
+                //Invariance: Makes sure the monsters last position isn't outsid of the map
+                lastMonsterPos = map[i];
+            }
+        }
+        cnt++;
     }
 
+    @Override
+    public void shootMonster(){
+        for(Tower tower : towers){
+            for(int k = 0; k < tower.getFireRate(); k++){
+                if(tower.canHit(enemy) && tower.didHit()){
+                    enemy.decreaseHP(tower.getDamage());
+                }
+            }
+        }
+    }
+
+    @Override
+    public boolean monsterHasMoved(){
+        return lastMonsterPos != null;
+    }
+
+    @Override
+    public Position getMonsterPos(){
+        return monsterPos;
+    }
+
+    @Override
+    public Position getLastMonsterPos(){
+        return lastMonsterPos;
+    }
+
+    @Override
+    public boolean enemyWon(){
+        return cnt > endInt;
+    }
 
     @Override
     public Tower[] getTowers(){
@@ -61,8 +107,4 @@ public class Game implements TopLevel{
         return map;
     }
 
-    @Override
-    public int getEndInt(){
-        return endInt;
-    }
 }
