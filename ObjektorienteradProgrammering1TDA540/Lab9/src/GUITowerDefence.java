@@ -44,14 +44,14 @@ public class GUITowerDefence extends JFrame implements ActionListener {
             if(cnt == game.getEnemyPath()[i]) {
                 Position monsterPos = game.getMap()[i];
                 game.getEnemy().setPos(monsterPos);
-                for(int k = 0; k < game.getTowers().length; k++){
-                    for(int h = 0; h < game.getTowers()[k].getFireRate(); h++){
-                        if(game.getTowers()[k].canHit(game.getEnemy())){
-                            if(game.getTowers()[k].didHit()){
-                                game.getEnemy().decreaseHP(game.getTowers()[k].getDamage());
-                            }
+
+                for(Tower tower : game.getTowers()){
+                    for(int k = 0; k < tower.getFireRate(); k++){
+                        if(tower.canHit(game.getEnemy()) && tower.didHit()){
+                            game.getEnemy().decreaseHP(tower.getDamage());
                         }
                     }
+
                 }
                 setMonsterPanel(positionsPanels.get(game.getMap()[i]));
             }else if(cnt - 1 == game.getEnemyPath()[i] && cnt - 1 != 0){
@@ -143,7 +143,7 @@ public class GUITowerDefence extends JFrame implements ActionListener {
 
     //Transforms a panel to a Monster Panel
     private void setMonsterPanel(JPanel norPanel){
-        JLabel health = new JLabel(Integer.toString(game.getEnemy().getHP()));
+        JLabel health = new JLabel(Integer.toString(game.getEnemy().getHitPoints()));
         JLabel icon = getIconLabel(game.getEnemy().getIconPath());
         norPanel.add(icon, BorderLayout.NORTH);
         norPanel.add(health, BorderLayout.SOUTH);

@@ -1,12 +1,12 @@
 import java.util.Random;
 
 public class Tower {
-    int fireRate = 2;
-    int range = 1;
-    int damage = 1;
-    String iconPath = "icons/tower-icon.png";
-    Random rand = new Random();
-    Position pos;
+    private int fireRate = 2;
+    private int range = 1;
+    private int damage = 1;
+    private String iconPath = "icons/tower-icon.png";
+    private Random rand = new Random();
+    private Position pos;
 
     public Tower(Position pos){
         this.pos = pos;

@@ -35,18 +35,33 @@ public class Game implements TopLevel{
         }
     }
 
+
+    public void run(){
+
+    }
+
+
+    @Override
     public Tower[] getTowers(){
         return towers;
     }
+
+    @Override
     public Enemy getEnemy(){
         return enemy;
     }
+
+    @Override
     public Integer[] getEnemyPath(){
         return enemyPath;
     }
+
+    @Override
     public Position[] getMap(){
         return map;
     }
+
+    @Override
     public int getEndInt(){
         return endInt;
     }
