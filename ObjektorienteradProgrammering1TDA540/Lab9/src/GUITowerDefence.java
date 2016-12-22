@@ -14,7 +14,7 @@ public class GUITowerDefence extends JFrame implements ActionListener, GUI {
     private final Timer timer;
     private static final int SPEED = 1000;
     private static final int PAUSE = 1000;
-    private Game game;
+    private TopLevel game;
     private String towerIconPath = "icons/tower-icon.png";
     private String enemyIconPath = "icons/monster10.gif";
 
