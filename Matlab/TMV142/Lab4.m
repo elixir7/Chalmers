@@ -115,6 +115,11 @@ v=[1;3;-1]; v=v/norm(v); Z=null(v'); P=[v,Z];
 
 if det(P)<0, P(:,[2 3])=P(:,[3 2]); end
 
+%Rotate all points.
+%P'=P^(-1) because P is an orthagonal matrix.
+%P' is a change of basis matrix from standard basis to P
+%A is the roation matrix and 
+%P is a change of basis matrix from P to standard basis
 Av=P*A*P';
 x=[0.5; 0.2; 0.5];
 
@@ -172,19 +177,24 @@ end
 axis equal, axis([-15 15 -15 15 -15 15]), box on, grid on, hold off
 
 
-%Loop one rotation
+%Loop 5 rotation
 for k=1:5*kMax
    clf
    %Rotate all points
    H = Av*H;
-   for i=1:size(H,2)
-        H(:,i) = B*H(:,i);
-   end
+   %Scale all points
+   H = B*H;
+   
    
    hold on
+   %Paint red line
    plot3([-v1(1) v1(1)],[-v1(2) v1(2)],[-v1(3) v1(3)],'r','linewidth',3)
+   %Clear Random variable from memory
    clear rand
+   %Create a random int from 1 to 5
    rand = randi([1 5],1);
+   
+   %Changes color on the object every frame
    switch rand
        case 1
            color = 'b';
@@ -200,9 +210,9 @@ for k=1:5*kMax
            color = 'k';
    end
        
+   %Paint Object
    for i=1:size(S,1)
        Si = S(i,:);
-       
        fill3(H(1,Si), H(2,Si), H(3,Si), color, 'facealpha', '0.4')
    end
    hold off
