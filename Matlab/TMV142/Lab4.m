@@ -76,19 +76,18 @@ X = [xmin xmax xmax xmin];
 Y = [ymin ymin ymax ymax];
 Z = (d - a*X - b*Y)/c;
 
-% pP = matrix for the tetrahed points on the plane
-pP = zeros(3, 4);
-
 hold on
 %Paint plane
 fill3(X,Y,Z, 'g', 'facealpha', 0.7)
 
-P = eye(3,3) - (1/dot(n,n)) * n*transpose(n);
-P2 = eye(3,3) - (2/dot(n,n)) * n*transpose(n);
+
+P = eye(3,3) - (1/dot(n,n)) * n*transpose(n)
+P2 = eye(3,3) - (2/dot(n,n)) * n*transpose(n)
 beta = (d/dot(n,n))*n;
 
-K = P*H + beta*ones(size(H(1,:)));
-K2 = P2*H + beta*ones(size(H(1,:)));
+
+K = P*H + beta*ones(size(H(1,:))); % Coordinates in the plane
+K2 = P2*H + beta*ones(size(H(1,:))); % Mirrored Coordinates in the plane
 %Paint normal tetrahed
 for i=1:size(S,1)
     Si = S(i,:);
@@ -140,7 +139,7 @@ axis equal, axis([-2 2 -2 2 -2 2]), axis vis3d
 clc
 clf
 phi=pi/11;
-kMax = (2*pi)/phi
+kMax = (2*pi)/phi;
 %Rotaion matrix
 A=[1 0 0; 0 cos(phi) -sin(phi); 0 sin(phi) cos(phi)];
 
@@ -220,8 +219,3 @@ for k=1:5*kMax
    axis equal, axis([-15 15 -15 15 -15 15]), box on, grid on, view(3)
    pause(0.01)
 end
-
-
-
-
-
