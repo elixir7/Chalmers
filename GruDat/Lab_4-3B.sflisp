@@ -1,0 +1,33 @@
+;	Laborations uppgift 4.3
+OUTPORT: 	EQU	$FB
+INPORT:		EQU	$FC
+state_index:	EQU	$00
+
+;Change RESET-VECTOR
+		ORG 	$FF
+		FCB	$20
+;Create state_vector
+state_vector:	ORG	$80
+		FCB	$05,$06,$0A,$09
+
+		ORG	$20
+		LDX	#state_vector
+Start:		LDA	INPORT
+		JSR	Delay
+		LDA	state_index
+		LDA	A,X
+		STA	OUTPORT
+		JSR	NextState
+		JMP	Start
+
+
+Delay:		DECA
+		BNE	Delay
+		RTS
+
+NextState:	INC	state_index
+		LDA	state_index
+		ANDA	#00000011
+		STA	state_index
+		RTS
+		

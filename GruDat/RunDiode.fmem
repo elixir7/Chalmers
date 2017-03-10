@@ -1,0 +1,15 @@
+QAflisp - FLISP Absolute crossassembler, Version 1.0
+(c) GMV 1989-2015
+File: RunDiode.fmem
+
+ # ClearAllMemory
+ # ClearAllRegisters
+ #setMemory  20=02
+ #setMemory  21=00
+ #setMemory  22=F0
+ #setMemory  23=01
+ #setMemory  24=E1
+ #setMemory  25=FB
+ #setMemory  26=0B
+ #setMemory  27=33
+ #setMemory  28=24

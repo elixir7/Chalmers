@@ -1,0 +1,25 @@
+QAflisp - FLISP Absolute crossassembler, Version 1.0
+(c) GMV 1989-2015
+
+
+File: DisplaySeg.lst
+                        1. ;	Declare DIPSWITCH to $FC
+                        2. ;	Declare the 7-segment display to $FB
+FC                      3. DIP:	EQU	$FC
+FB                      4. SEG7:	EQU	$FB
+00                      5. 	
+                        6. 
+20                      7. 	ORG	$20
+20 90 70                8. DISP:	LDX	#$70
+22 F1 FC                9. DISP_1:	LDA	DIP
+24 F4                  10. 	LDA	A,X
+25 E1 FB               11. 	STA	SEG7
+27 33 22               12. 	JMP	DISP_1
+                       13. 
+                       14. 
+                       15. 
+                       16. 
+                       17. ;	Declare the hexcodes for 0-9 on the 7segmentdisplay
+70                     18. 	ORG	$70
+70 3F 06 5B 4F 66 6D   19. SEGMENT:	FCB	$3F,$06,$5B,$4F,$66,$6D,$FC,$07,$7F,$E7
+     FC 07 7F E7      

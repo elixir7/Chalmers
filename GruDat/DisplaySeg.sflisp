@@ -1,0 +1,19 @@
+;	Declare DIPSWITCH to $FC
+;	Declare the 7-segment display to $FB
+DIP:	EQU	$FC
+SEG7:	EQU	$FB
+	
+
+	ORG	$20
+DISP:	LDX	#$70
+DISP_1:	LDA	DIP
+	LDA	A,X
+	STA	SEG7
+	JMP	DISP_1
+
+
+
+
+;	Declare the hexcodes for 0-9 on the 7segmentdisplay
+	ORG	$70
+SEGMENT:	FCB	$3F,$06,$5B,$4F,$66,$6D,$FC,$07,$7F,$E7

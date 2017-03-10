@@ -1,0 +1,9 @@
+LED:		EQU	$FB
+
+		ORG	$20
+RunDiode:	ORCC	#%00000000
+		LDA	#01
+
+RunDiode_1:	STA	LED
+		ASLA
+		JMP	RunDiode_1

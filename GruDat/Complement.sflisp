@@ -1,0 +1,11 @@
+;
+;	Moment1
+;
+DIP	EQU	$FC
+LED	EQU	$FB
+	
+	ORG	$20
+start:	LDA	DIP
+	COMA	
+	STA	LED
+	JMP	start

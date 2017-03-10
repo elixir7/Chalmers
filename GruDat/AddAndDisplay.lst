@@ -1,0 +1,14 @@
+QAflisp - FLISP Absolute crossassembler, Version 1.0
+(c) GMV 1989-2015
+
+
+File: AddAndDisplay.lst
+FB                      1. DIP_1:	EQU	$FB
+FC                      2. DIP_2:	EQU	$FC
+FC                      3. HEXD:	EQU	$FC
+                        4. 
+20                      5. 	ORG	$20
+20 F1 FB                6. AAA:	LDA	DIP_1
+22 A6 FC                7. 	ADDA	DIP_2
+24 E1 FC                8. 	STA	HEXD
+26 33 20                9. 	JMP	AAA

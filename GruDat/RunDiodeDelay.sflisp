@@ -1,0 +1,23 @@
+LED:		EQU	$FB
+
+;Change RESET-VECTOR
+		ORG 	$FF
+		FCB	$20
+
+		ORG	$20
+RunDiodeDelay:	LDSP	#$10
+		ORCC	#%00000000
+		LDA	#01
+RunDiodeDelay_1:	STA	LED
+		ASLA
+		JSR	Delay
+		JMP	RunDiodeDelay_1
+
+Delay:		PSHA
+		PSHC
+		LDA	#10
+Delay_1:		DECA
+		BNE	Delay_1
+		PULC
+		PULA
+		RTS

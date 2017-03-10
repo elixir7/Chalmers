@@ -1,0 +1,39 @@
+QAflisp - FLISP Absolute crossassembler, Version 1.0
+(c) GMV 1989-2015
+
+
+File: Lab_4-3B.lst
+                        1. ;	Laborations uppgift 4.3
+FB                      2. OUTPORT: 	EQU	$FB
+FC                      3. INPORT:		EQU	$FC
+00                      4. state_index:	EQU	$00
+                        5. 
+                        6. ;Create state_vector
+80                      7. state_vector:	ORG	$80
+80 05 06 0A 09          8. 		FCB	$05,$06,$0A,$09
+                        9. 
+20                     10. 		ORG	$20
+20 90 80               11. 		LDX	#state_vector
+22 F1 FC               12. Start:		LDA	INPORT
+24 34 2F               13. 		JSR	Delay
+26 F1 00               14. 		LDA	state_index
+28 F4                  15. 		LDA	A,X
+29 E1 FB               16. 		STA	OUTPORT
+2B 34 33               17. 		JSR	NextState
+2D 33 22               18. 		JMP	Start
+                       19. 
+                       20. 
+2F 08                  21. Delay:		DECA
+30 25 FD               22. 		BNE	Delay
+32 43                  23. 		RTS
+                       24. 
+33 10                  25. NextState:	PSHA
+34 13                  26. 		PSHC
+35 37 00               27. 		INC	state_index
+37 F1 00               28. 		LDA	state_index
+39 99 0B               29. 		ANDA	#00000011
+3B E1 00               30. 		STA	state_index
+3D 17                  31. 		PULC
+3E 14                  32. 		PULA
+3F 43                  33. 		RTS
+40                     34. 		

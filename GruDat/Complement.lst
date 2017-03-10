@@ -1,0 +1,16 @@
+QAflisp - FLISP Absolute crossassembler, Version 1.0
+(c) GMV 1989-2015
+
+
+File: Complement.lst
+                        1. ;
+                        2. ;	Moment1
+                        3. ;
+FC                      4. DIP	EQU	$FC
+FB                      5. LED	EQU	$FB
+00                      6. 	
+20                      7. 	ORG	$20
+20 F1 FC                8. start:	LDA	DIP
+22 0A                   9. 	COMA	
+23 E1 FB               10. 	STA	LED
+25 33 20               11. 	JMP	start

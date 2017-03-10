@@ -1,0 +1,23 @@
+QAflisp - FLISP Absolute crossassembler, Version 1.0
+(c) GMV 1989-2015
+
+
+File: Lab_4-3A.lst
+                        1. ;	Laborations uppgift 4.3
+FB                      2. OUTPORT: 	EQU	$FB
+05                      3. State_1:		EQU	$05
+06                      4. State_2:		EQU	$06
+0A                      5. State_3:		EQU	$0A
+09                      6. State_4:		EQU	$09
+                        7. 
+                        8. 
+20                      9. 		ORG	$20
+20 F0 05               10. Start:		LDA	#State_1
+22 E1 FB               11. 		STA	OUTPORT
+24 F0 06               12. 		LDA	#State_2
+26 E1 FB               13. 		STA	OUTPORT
+28 F0 0A               14. 		LDA	#State_3
+2A E1 FB               15. 		STA	OUTPORT
+2C F0 09               16. 		LDA	#State_4
+2E E1 FB               17. 		STA	OUTPORT
+30 33 20               18. 		JMP	Start

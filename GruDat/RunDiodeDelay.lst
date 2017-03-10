@@ -1,0 +1,24 @@
+QAflisp - FLISP Absolute crossassembler, Version 1.0
+(c) GMV 1989-2015
+
+
+File: RunDiodeDelay.lst
+FB                      1. LED:		EQU	$FB
+                        2. 
+20                      3. 		ORG	$20
+20 92 10                4. RunDiodeDelay:	LDSP	#$10
+22 02 00                5. 		ORCC	#%00000000
+24 F0 01                6. 		LDA	#01
+26 E1 FB                7. RunDiodeDelay_1:	STA	LED
+28 0B                   8. 		ASLA
+29 34 2D                9. 		JSR	Delay
+2B 33 26               10. 		JMP	RunDiodeDelay_1
+                       11. 
+2D 10                  12. Delay:		PSHA
+2E 13                  13. 		PSHC
+2F F0 FF               14. 		LDA	#255
+31 08                  15. Delay_1:		DECA
+32 25 FD               16. 		BNE	Delay_1
+34 17                  17. 		PULC
+35 14                  18. 		PULA
+36 43                  19. 		RTS

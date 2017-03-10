@@ -1,0 +1,29 @@
+;	Declare DIPSWITCH to $FC
+;	Declare the 7-segment display to $FB
+DIPSWITCH:	EQU	$FC
+SEGMENT7:	EQU	$FB
+SEG_ERROR:	EQU	$79	
+	
+;Change RESET-VECTOR
+		ORG 	$FF
+		FCB	$20
+
+		ORG	$20		
+DisplaySegE:	LDX	#Segmentkod
+DisplaySegE_1:	LDA	DIPSWITCH
+		CMPA	#10
+		BCS	DisplaySegE_2
+		LDA	#SEG_ERROR
+		BRA	DisplaySegE_3
+
+
+DisplaySegE_2:	LDA	A,X
+DisplaySegE_3:	STA	SEGMENT7
+		JMP	DisplaySegE_1
+
+
+
+
+;	Declare the hexcodes for 0-9 on the 7segmentdisplay
+		ORG	$70
+Segmentkod:	FCB	$3F,$06,$5B,$4F,$66,$6D,$FC,$07,$7F,$E7

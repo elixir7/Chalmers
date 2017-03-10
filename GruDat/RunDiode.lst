@@ -1,0 +1,14 @@
+QAflisp - FLISP Absolute crossassembler, Version 1.0
+(c) GMV 1989-2015
+
+
+File: RunDiode.lst
+FB                      1. LED:		EQU	$FB
+                        2. 
+20                      3. 		ORG	$20
+20 02 00                4. RunDiode:	ORCC	#%00000000
+22 F0 01                5. 		LDA	#01
+                        6. 
+24 E1 FB                7. RunDiode_1:	STA	LED
+26 0B                   8. 		ASLA
+27 33 24                9. 		JMP	RunDiode_1
