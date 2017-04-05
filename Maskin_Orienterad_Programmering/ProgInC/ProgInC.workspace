@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CodeLite_Workspace Name="ProgInC" Database="" Version="10.0.0">
+<CodeLite_Workspace Name="ProgInC" Database="" Version="10.0.0" SWTLW="Yes">
+  <WorkspaceParserMacros/>
+  <WorkspaceParserPaths/>
   <Project Name="Uppgifter_After_Lecture" Path="Uppgifter_After_Lecture/Uppgifter_After_Lecture.project" Active="Yes"/>
+  <Project Name="tst" Path="tst/tst.project" Active="No"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Environment/>
       <Project Name="Uppgifter_After_Lecture" ConfigName="Debug"/>
+      <Project Name="tst" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Environment/>
       <Project Name="Uppgifter_After_Lecture" ConfigName="Release"/>
+      <Project Name="tst" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

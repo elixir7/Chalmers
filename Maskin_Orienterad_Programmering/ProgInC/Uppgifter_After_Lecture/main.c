@@ -10,7 +10,7 @@
 
 void printBinary8(unsigned char byte){
 	for(int i = 7; i >= 0; i--){
-		int bit = (byte >> i ) & 0x01;
+		int bit = (byte >> i ) & 1;
 		printf("%i", bit);
 	}
 	printf("\n");
@@ -158,20 +158,19 @@ void animateBitsV3() {
     }
 }
 
-
 int main(void){
-    animateBitsV3();
+    int a = 0xA0;
+    printf("%c", a);
+    
 	/*
 	unsigned char byte = 200;
 	unsigned char binNumb[] = "00001001";
 	unsigned char c = 128;
 	 */
-	 
     /*	
 		printBinary(byte);
 		printDecimal(binNumb);
 	*/ 
-	
 	/*
 	//Alternative version: c |= 0b00101010
 	printBinary8(c);
@@ -191,16 +190,12 @@ int main(void){
 	
 	printf("%d", c);
 	 */
-	
 	/*
 	signed char x = 27;
 	x = ~x + 1;
 	// eller x ^= 0xFF 0ch x++;
 	printf("%i", (x));
 	*/ 
-	 
-	//animateBitsV1();
-	 
 	 /*
 	 unsigned short numb1 = 30345;
 	 unsigned int numb2 = 65987;

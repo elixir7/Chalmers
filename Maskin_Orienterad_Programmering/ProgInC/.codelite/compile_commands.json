@@ -1,0 +1,9 @@
+[{
+  "file": "/Users/isak/code/Chalmers/Maskin_Orienterad_Programmering/ProgInC/Uppgifter_After_Lecture/main.c",
+  "directory": "/Users/isak/code/Chalmers/Maskin_Orienterad_Programmering/ProgInC/Uppgifter_After_Lecture",
+  "command": "/usr/bin/gcc -c /Users/isak/code/Chalmers/Maskin_Orienterad_Programmering/ProgInC/Uppgifter_After_Lecture/main.c -o /Users/isak/code/Chalmers/Maskin_Orienterad_Programmering/ProgInC/Uppgifter_After_Lecture/main.c.o  -g  -O0  -std=c99 -I. -I."
+ }, {
+  "file": "/Users/isak/code/Chalmers/Maskin_Orienterad_Programmering/ProgInC/tst/startup.c",
+  "directory": "/Users/isak/code/Chalmers/Maskin_Orienterad_Programmering/ProgInC/tst",
+  "command": "/Applications/gcc-arm/bin/arm-none-eabi-gcc -c /Users/isak/code/Chalmers/Maskin_Orienterad_Programmering/ProgInC/tst/startup.c -o /Users/isak/code/Chalmers/Maskin_Orienterad_Programmering/ProgInC/tst/startup.c.o  -g  -O0  -mthumb  -Wall  -march=armv6-m  -msoft-float  -Wa,-adhln=test.s -I. -I."
+ }]
