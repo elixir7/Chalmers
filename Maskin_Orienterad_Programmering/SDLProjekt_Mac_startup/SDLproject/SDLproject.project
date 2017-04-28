@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeLite_Project Name="SDLproject" InternalType="Console" Version="10.0.0">
+  <Reconciliation>
+    <Regexes/>
+    <Excludepaths/>
+    <Ignorefiles/>
+    <Extensions>
+      <![CDATA[cpp;c;h;hpp;xrc;wxcp;fbp]]>
+    </Extensions>
+    <Topleveldir>../SDLproject</Topleveldir>
+  </Reconciliation>
   <Plugins>
     <Plugin Name="qmake">
       <![CDATA[00020001N0005Debug0000000000000001N0007Release000000000000]]>
@@ -30,12 +39,30 @@
   <Dependencies/>
   <VirtualDirectory Name="src">
     <File Name="main.c"/>
-    <File Name="renderer.h"/>
-    <File Name="renderer.c"/>
-    <File Name="forelasning_3_i_4.c"/>
+    <File Name="vecmath.h"/>
+    <VirtualDirectory Name="background">
+      <File Name="background.c"/>
+      <File Name="background.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="misc">
+      <File Name="misc.c"/>
+      <File Name="misc.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="renderer">
+      <File Name="renderer.c"/>
+      <File Name="renderer.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="ship">
+      <File Name="ship.c"/>
+      <File Name="ship.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="gameobject">
+      <File Name="src/gameobject.c"/>
+      <File Name="gameobject.h"/>
+    </VirtualDirectory>
+    <File Name="alien.c"/>
+    <File Name="alien.h"/>
   </VirtualDirectory>
-  <Dependencies Name="Debug"/>
-  <Dependencies Name="Release"/>
   <Settings Type="Executable">
     <GlobalSettings>
       <Compiler Options="" C_Options="" Assembler="">
@@ -126,4 +153,6 @@
       </Completion>
     </Configuration>
   </Settings>
+  <Dependencies Name="Debug"/>
+  <Dependencies Name="Release"/>
 </CodeLite_Project>

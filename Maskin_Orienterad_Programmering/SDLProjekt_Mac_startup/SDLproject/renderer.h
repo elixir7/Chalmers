@@ -32,7 +32,6 @@
 #   error "Unknown compiler"
 #endif
 
-
 typedef enum { false, true } bool;
 
 // define globals here so that they could be accessed from files that include renderer.h
@@ -52,6 +51,7 @@ void closeRenderer();                                   // deallocate resources 
 GfxObject createGfxObject(  const char* imagefilename );// creates a GfxObject from an image file  
 void renderGfxObject(GfxObject* gfx, int x, int y,      // draws the object to the screen at pos x,y
                      double angle, float scale );       //    default: angle=0, scale=1.0f
+void renderGfxSubFrame(GfxObject* gfx, int x, int y, double angle, float scale, SDL_Rect srcRect );
 void freeGfxObject(GfxObject* gfx);                     // free the object's allocated SDL resources 
 
 

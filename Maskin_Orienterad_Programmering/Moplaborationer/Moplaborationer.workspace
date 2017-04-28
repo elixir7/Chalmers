@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Workspace Name="Moplaborationer" Database="" Version="10.0.0">
+  <Project Name="keypad" Path="keypad/keypad.project" Active="No"/>
+  <Project Name="basic_io2" Path="basic_io2/basic_io2.project" Active="Yes"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Debug" Selected="yes">
+      <Environment/>
+      <Project Name="keypad" ConfigName="Debug"/>
+      <Project Name="basic_io2" ConfigName="Debug"/>
+    </WorkspaceConfiguration>
+    <WorkspaceConfiguration Name="Release" Selected="yes">
+      <Environment/>
+      <Project Name="keypad" ConfigName="Release"/>
+      <Project Name="basic_io2" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+</CodeLite_Workspace>

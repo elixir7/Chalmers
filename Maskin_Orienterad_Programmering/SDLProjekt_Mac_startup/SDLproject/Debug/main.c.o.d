@@ -32,7 +32,8 @@
   SDL2.framework/Headers/SDL_system.h SDL2.framework/Headers/SDL_timer.h \
   SDL2.framework/Headers/SDL_version.h \
   SDL2_image.framework/Headers/SDL_image.h \
-  SDL2_ttf.framework/Headers/SDL_ttf.h
+  SDL2_ttf.framework/Headers/SDL_ttf.h vecmath.h gameobject.h misc.h \
+  ship.h background.h alien.h
 
 renderer.h:
 
@@ -127,3 +128,15 @@ SDL2.framework/Headers/SDL_version.h:
 SDL2_image.framework/Headers/SDL_image.h:
 
 SDL2_ttf.framework/Headers/SDL_ttf.h:
+
+vecmath.h:
+
+gameobject.h:
+
+misc.h:
+
+ship.h:
+
+background.h:
+
+alien.h:

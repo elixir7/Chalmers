@@ -1,12 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Session Name="/Users/ulfassarsson/Desktop/hemuppgifter/SDLProjekt_Mac_startup/hemuppgifter.workspace">
-  <int Value="0" Name="m_selectedTab"/>
-  <wxString Value="/Users/ulfassarsson/Desktop/hemuppgifter/SDLProjekt_Mac_startup/hemuppgifter.workspace" Name="m_workspaceName"/>
+<Session Name="/Users/isak/code/Chalmers/Maskin_Orienterad_Programmering/SDLProjekt_Mac_startup/hemuppgifter.workspace">
+  <int Value="2" Name="m_selectedTab"/>
+  <wxString Value="/Users/isak/code/Chalmers/Maskin_Orienterad_Programmering/SDLProjekt_Mac_startup/hemuppgifter.workspace" Name="m_workspaceName"/>
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
-      <wxString Value="/Users/ulfassarsson/Desktop/hemuppgifter/SDLProjekt_Mac_startup/SDLproject/main.c" Name="FileName"/>
-      <int Value="23" Name="FirstVisibleLine"/>
-      <int Value="25" Name="CurrentLine"/>
+      <wxString Value="/Users/isak/code/Chalmers/Maskin_Orienterad_Programmering/SDLProjekt_Mac_startup/SDLproject/main.c" Name="FileName"/>
+      <int Value="49" Name="FirstVisibleLine"/>
+      <int Value="64" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/Users/isak/code/Chalmers/Maskin_Orienterad_Programmering/SDLProjekt_Mac_startup/SDLproject/alien.c" Name="FileName"/>
+      <int Value="22" Name="FirstVisibleLine"/>
+      <int Value="33" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/Users/isak/code/Chalmers/Maskin_Orienterad_Programmering/SDLProjekt_Mac_startup/SDLproject/src/gameobject.c" Name="FileName"/>
+      <int Value="1" Name="FirstVisibleLine"/>
+      <int Value="13" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>

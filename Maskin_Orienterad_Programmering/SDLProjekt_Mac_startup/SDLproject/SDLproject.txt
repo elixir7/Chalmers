@@ -1,1 +1,1 @@
-./Debug/main.c.o ./Debug/renderer.c.o
+./Debug/main.c.o ./Debug/alien.c.o ./Debug/background.c.o ./Debug/misc.c.o ./Debug/renderer.c.o ./Debug/ship.c.o ./Debug/src_gameobject.c.o
