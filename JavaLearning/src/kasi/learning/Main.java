@@ -1,14 +1,29 @@
 package kasi.learning;
 
+import java.io.FileNotFoundException;
+import java.io.File;
+
 import java.util.Arrays;
+import  java.util.Scanner;
+
 
 public class Main {
 
     public static void main(String[] args) {
         //putTester();
-        //System.out.println(stringTwin("anna", "patrik"));
-        String swag = stringTwinReq("anna","patrik");
-        System.out.println(swag);
+        //System.out.println(stringTwinReq("anna", "patrik"));
+        //System.out.println(stringTwin("anna","patrik"));
+        //System.out.println(stringTwin("osvald","isak"));
+        //System.out.println(stringTwin("ann-sophie","lotta"));
+        //freqAnalasysText("text.txt");
+        //Date date = new Date(2100, 7, 10);
+        //Date date1 = new Date(2018, 11, 15); //Torsdag
+        //System.out.println(date.weekDay());
+        //System.out.println(date1.weekDay());
+        //randomTester();
+        System.out.println(binomialK(4,2));
+        System.out.println(binomialK(8,5));
+
     }
 
     /**
@@ -55,13 +70,25 @@ public class Main {
      * @param filename the name of the file containing the text. E.g harry_potter.txt
      */
     public static void freqAnalasysText(String filename){
-        //Max 100 characters, is there a better way to do it?
-        FreqArray freqArray = new FreqArray(new int[100], new char[100]);
-        char[] text; // the text in the file
-        /*for(char ch : text){
-            freqArray.analys(ch);
-        }*/
+        try{
+            Scanner in = new Scanner(new File(filename));
+            StringBuilder sb = new StringBuilder();
+            while(in.hasNext()) {
+                sb.append(in.next());
+            }
+            in.close();
+            String outString = sb.toString();
+            //all characters are in the file
+            char[] text = outString.toLowerCase().toCharArray();
+            System.out.println(text);
 
+            FreqArray freqArray = new FreqArray(text);
+            freqArray.analys();
+            freqArray.distrubution();
+
+        }catch (FileNotFoundException fail){
+            System.out.println("File not found!");
+        }
 }
 
     /**
@@ -105,14 +132,34 @@ public class Main {
      * @return The twinned String
      */
     public static String stringTwinReq(String str1, String str2){
-        System.out.println(str1);
-        System.out.println(str2);
-        if(str2.length() == 0){
-            return str1;
-        }else if(str1.length() == 0){
-            return str2;
-        }else {
-            return str1.charAt(0) + str2.charAt(0) +  stringTwinReq(str1.substring(1), str2.substring(1));
+        if(str1.isEmpty() || str2.isEmpty()){
+            return str1 + str2;
+        } else {
+            return "" + str1.charAt(0) + str2.charAt(0) +  stringTwinReq(str1.substring(1), str2.substring(1));
         }
     }
+
+    public static void randomTester(){
+        int[] freq = new int[28];
+        int n = 10000000;
+
+        for(int i = 0; i < n; i++){
+            freq[Random.random(0,freq.length)]++;
+        }
+
+        for(int i = 0; i < freq.length; i++){
+            System.out.println(i + " : " + 100d*freq[i]/n + "%");
+        }
+    }
+
+    public static int binomialK(int n, int k){
+        if(k < 0 || n < k){
+            return 0;
+        }else if (k == 0 || n == k){
+            return 1;
+        }else{
+            return binomialK(n-1,k-1) + binomialK(n-1, k);
+        }
+    }
+
 }
